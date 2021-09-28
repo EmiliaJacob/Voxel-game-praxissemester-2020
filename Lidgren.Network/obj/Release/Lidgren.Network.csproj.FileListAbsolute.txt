@@ -1,0 +1,4 @@
+C:\Users\fe5ja5\Documents\NewWorld\2020-newworld\NewWorldVoxel\Lidgren.Network\bin\Release\Lidgren.Network.dll
+C:\Users\fe5ja5\Documents\NewWorld\2020-newworld\NewWorldVoxel\Lidgren.Network\obj\Release\Lidgren.Network.csprojAssemblyReference.cache
+C:\Users\fe5ja5\Documents\NewWorld\2020-newworld\NewWorldVoxel\Lidgren.Network\obj\Release\Lidgren.Network.csproj.CoreCompileInputs.cache
+C:\Users\fe5ja5\Documents\NewWorld\2020-newworld\NewWorldVoxel\Lidgren.Network\obj\Release\Lidgren.Network.dll

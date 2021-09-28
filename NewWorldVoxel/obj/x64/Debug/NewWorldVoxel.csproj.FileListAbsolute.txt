@@ -1,0 +1,13 @@
+C:\Users\fe5ja5\Documents\NewWorld\2020-newworld\NewWorldVoxel\NewWorldVoxel\bin\x64\Debug\NewWorldVoxel.exe.config
+C:\Users\fe5ja5\Documents\NewWorld\2020-newworld\NewWorldVoxel\NewWorldVoxel\bin\x64\Debug\NewWorldVoxel.exe
+C:\Users\fe5ja5\Documents\NewWorld\2020-newworld\NewWorldVoxel\NewWorldVoxel\bin\x64\Debug\NewWorldVoxel.pdb
+C:\Users\fe5ja5\Documents\NewWorld\2020-newworld\NewWorldVoxel\NewWorldVoxel\bin\x64\Debug\Lidgren.Network.dll
+C:\Users\fe5ja5\Documents\NewWorld\2020-newworld\NewWorldVoxel\NewWorldVoxel\bin\x64\Debug\VoxelEngine.dll
+C:\Users\fe5ja5\Documents\NewWorld\2020-newworld\NewWorldVoxel\NewWorldVoxel\bin\x64\Debug\Lidgren.Network.pdb
+C:\Users\fe5ja5\Documents\NewWorld\2020-newworld\NewWorldVoxel\NewWorldVoxel\bin\x64\Debug\VoxelEngine.pdb
+C:\Users\fe5ja5\Documents\NewWorld\2020-newworld\NewWorldVoxel\NewWorldVoxel\bin\x64\Debug\VoxelEngine.xml
+C:\Users\fe5ja5\Documents\NewWorld\2020-newworld\NewWorldVoxel\NewWorldVoxel\obj\x64\Debug\NewWorldVoxel.csproj.CoreCompileInputs.cache
+C:\Users\fe5ja5\Documents\NewWorld\2020-newworld\NewWorldVoxel\NewWorldVoxel\obj\x64\Debug\NewWorldVoxel.csproj.CopyComplete
+C:\Users\fe5ja5\Documents\NewWorld\2020-newworld\NewWorldVoxel\NewWorldVoxel\obj\x64\Debug\NewWorldVoxel.exe
+C:\Users\fe5ja5\Documents\NewWorld\2020-newworld\NewWorldVoxel\NewWorldVoxel\obj\x64\Debug\NewWorldVoxel.pdb
+C:\Users\fe5ja5\Documents\NewWorld\2020-newworld\NewWorldVoxel\NewWorldVoxel\obj\x64\Debug\NewWorldVoxel.csprojAssemblyReference.cache

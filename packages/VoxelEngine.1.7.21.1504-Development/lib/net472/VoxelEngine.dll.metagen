@@ -1,0 +1,1210 @@
+  voxel.geom - Embedded, ContainedInManifestFile, 
+  voxel.vert - Embedded, ContainedInManifestFile, 
+  voxel.frag - Embedded, ContainedInManifestFile, 
+ImageRuntimeVersion: v4.0.30319
+Assembly VoxelEngine, Version=1.0.*, Culture=Invariante Sprache (Invariantes Land): 
+	hash=SHA1, flags=PublicKey
+Assembly mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Numerics, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Xml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Struct EngineCore.VoxelVolume.Data.VoxelObjectData: AutoLayout, AnsiClass, Class, Public, SequentialLayout, Sealed, BeforeFieldInit
+  :System.ValueType
+  Methods:
+    <MarshalCopy>(VoxelObjectData*, VoxelObjectData*): PrivateScope, Public, Static, SpecialName
+    <MarshalDestroy>(VoxelObjectData*): PrivateScope, Public, Static, SpecialName
+Class VoxelEngine.Util.MathExtension: AutoLayout, AnsiClass, Class, Public, Abstract, Sealed, BeforeFieldInit
+  Methods:
+    Clamp(Single, Single, Single): PrivateScope, Public, Static, HideBySig
+    Clamp(Int32, Int32, Int32): PrivateScope, Public, Static, HideBySig
+    Round(Vector3): PrivateScope, Public, Static, HideBySig
+    Floor(Vector3): PrivateScope, Public, Static, HideBySig
+    Ceiling(Vector3): PrivateScope, Public, Static, HideBySig
+    convert(mat<3\,3\,float\,0>): PrivateScope, Public, Static, HideBySig
+    convert(vec<3\,float\,0>* IsImplicitlyDereferenced): PrivateScope, Public, Static, HideBySig
+    convert(qua<float\,0>*, Quaternion): PrivateScope, Public, Static, HideBySig
+    convert(vec<3\,float\,0>*, Vector3): PrivateScope, Public, Static, HideBySig
+Class VoxelEngine.Cameras.CameraComponent: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  Properties:
+    Single AspectRatio 'get set' : 
+    Single Far 'get set' : 
+    Single Near 'get set' : 
+    Single FieldOfViewInDegrees 'get set' : 
+    System.Numerics.Quaternion Rotation 'get set' : 
+    System.Numerics.Vector3 Down 'get ' : 
+    System.Numerics.Vector3 Up 'get ' : 
+    System.Numerics.Vector3 Left 'get ' : 
+    System.Numerics.Vector3 Right 'get ' : 
+    System.Numerics.Vector3 Back 'get ' : 
+    System.Numerics.Vector3 Front 'get ' : 
+    System.Numerics.Vector3 Position 'get set' : 
+  Methods:
+    get_Position(): PrivateScope, Public, HideBySig, SpecialName
+    set_Position(Vector3): PrivateScope, Public, HideBySig, SpecialName
+    get_Front(): PrivateScope, Public, HideBySig, SpecialName
+    get_Back(): PrivateScope, Public, HideBySig, SpecialName
+    get_Right(): PrivateScope, Public, HideBySig, SpecialName
+    get_Left(): PrivateScope, Public, HideBySig, SpecialName
+    get_Up(): PrivateScope, Public, HideBySig, SpecialName
+    get_Down(): PrivateScope, Public, HideBySig, SpecialName
+    get_Rotation(): PrivateScope, Public, HideBySig, SpecialName
+    set_Rotation(Quaternion): PrivateScope, Public, HideBySig, SpecialName
+    get_FieldOfViewInDegrees(): PrivateScope, Public, HideBySig, SpecialName
+    set_FieldOfViewInDegrees(Single): PrivateScope, Public, HideBySig, SpecialName
+    get_Near(): PrivateScope, Public, HideBySig, SpecialName
+    set_Near(Single): PrivateScope, Public, HideBySig, SpecialName
+    get_Far(): PrivateScope, Public, HideBySig, SpecialName
+    set_Far(Single): PrivateScope, Public, HideBySig, SpecialName
+    get_AspectRatio(): PrivateScope, Public, HideBySig, SpecialName
+    set_AspectRatio(Single): PrivateScope, Public, HideBySig, SpecialName
+Interface VoxelEngine.Cameras.ICamera: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract, BeforeFieldInit
+  Properties:
+    VoxelEngine.Cameras.CameraComponent Component 'get set' : 
+  Methods:
+    set_Component(CameraComponent): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_Component(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    Init(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    ResizeView(ValueTuple`2): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    Update(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    PrintCameraData(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+Class VoxelEngine.VoxelObjects.Components.TransformComponent: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    System.IDisposable
+  Properties:
+    System.Numerics.Vector3 Up 'get ' : 
+    System.Numerics.Vector3 Right 'get ' : 
+    System.Numerics.Vector3 Forward 'get ' : 
+    System.Numerics.Vector3 Extent 'get set' : 
+    System.Numerics.Quaternion Orientation 'get set' : 
+    System.Numerics.Vector3 Velocity 'get set' : 
+    System.Numerics.Vector3 Position 'get set' : 
+  Methods:
+    get_Position(): PrivateScope, Public, HideBySig, SpecialName
+    set_Position(Vector3): PrivateScope, Public, HideBySig, SpecialName
+    get_Velocity(): PrivateScope, Public, HideBySig, SpecialName
+    set_Velocity(Vector3): PrivateScope, Public, HideBySig, SpecialName
+    get_Orientation(): PrivateScope, Public, HideBySig, SpecialName
+    set_Orientation(Quaternion): PrivateScope, Public, HideBySig, SpecialName
+    get_Extent(): PrivateScope, Public, HideBySig, SpecialName
+    set_Extent(Vector3): PrivateScope, Public, HideBySig, SpecialName
+    get_Forward(): PrivateScope, Public, HideBySig, SpecialName
+    get_Right(): PrivateScope, Public, HideBySig, SpecialName
+    get_Up(): PrivateScope, Public, HideBySig, SpecialName
+    Dispose(): PrivateScope, Public, Final, Virtual, HideBySig
+Interface VoxelEngine.Cameras.ITrackable: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract, BeforeFieldInit
+  Properties:
+    VoxelEngine.VoxelObjects.Components.TransformComponent Transform 'get ' : 
+  Methods:
+    get_Transform(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+Struct VoxelEngine.FileSystem.VoxColor: AutoLayout, AnsiClass, Class, Public, SequentialLayout, Sealed, BeforeFieldInit
+  :System.ValueType
+    Void .ctor(Byte, Byte, Byte, Byte): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    Byte R : Public
+    Byte G : Public
+    Byte B : Public
+    Byte A : Public
+Struct VoxelEngine.FileSystem.VoxMaterial: AutoLayout, AnsiClass, Class, Public, SequentialLayout, Sealed, BeforeFieldInit
+  :System.ValueType
+  Fields:
+    VoxelEngine.FileSystem.MaterialTypes Type : Public
+    Single Weight : Public
+    System.Nullable`1[System.Single] Roughness : Public
+    System.Nullable`1[System.Single] Specular : Public
+    System.Nullable`1[System.Single] IndexOfRefraction : Public
+    System.Nullable`1[System.Single] Attenuation : Public
+    System.Nullable`1[System.Single] Flux : Public
+    System.Nullable`1[System.Single] Plastic : Public
+  Methods:
+    CreateDiffuse(): PrivateScope, Public, Static, HideBySig
+    CreateMetal(Single, Single, Single, Boolean(HasFieldMarshal)): PrivateScope, Public, Static, HideBySig
+    CreateGlass(Single, Single, Single, Single): PrivateScope, Public, Static, HideBySig
+    CreateEmissive(Single, Single): PrivateScope, Public, Static, HideBySig
+    CreateEmissive(Single, Single, Single): PrivateScope, Public, Static, HideBySig
+    CalculateFlux(Nullable`1, Nullable`1): PrivateScope, Public, Static, HideBySig
+Struct VoxelEngine.FileSystem.VoxPosition: AutoLayout, AnsiClass, Class, Public, SequentialLayout, Sealed, BeforeFieldInit
+  :System.ValueType
+    Void .ctor(SByte, SByte, SByte): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    System.IEquatable`1[VoxelEngine.FileSystem.VoxPosition]
+  Fields:
+    SByte X IsSignUnspecifiedByte : Public
+    SByte Y IsSignUnspecifiedByte : Public
+    SByte Z IsSignUnspecifiedByte : Public
+  Methods:
+    Equals(Object): PrivateScope, Public, Final, Virtual, HideBySig
+    Equals(VoxPosition): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask
+    GetHashCode(): PrivateScope, Public, Final, Virtual, HideBySig
+    op_Equality(VoxPosition, VoxPosition): PrivateScope, Public, Static, HideBySig, SpecialName
+    op_Inequality(VoxPosition, VoxPosition): PrivateScope, Public, Static, HideBySig, SpecialName
+Class VoxelEngine.FileSystem.VoxModel: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    System.IDisposable
+  Fields:
+    Byte NullVoxel = 0 : Public, Static, Literal, HasDefault
+    Int32 MaxWidth = 255 : Public, Static, Literal, HasDefault
+    Int32 MaxHeight = 255 : Public, Static, Literal, HasDefault
+    Int32 MaxDepth = 255 : Public, Static, Literal, HasDefault
+  Properties:
+    Int32 Depth 'get set' : 
+    Int32 Height 'get set' : 
+    Int32 Width 'get set' : 
+  Methods:
+    get_Width(): PrivateScope, Public, HideBySig, SpecialName
+    set_Width(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_Height(): PrivateScope, Public, HideBySig, SpecialName
+    set_Height(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_Depth(): PrivateScope, Public, HideBySig, SpecialName
+    set_Depth(Int32): PrivateScope, Public, HideBySig, SpecialName
+    GetVoxelAt(SByte IsSignUnspecifiedByte, SByte IsSignUnspecifiedByte, SByte IsSignUnspecifiedByte): PrivateScope, Public, HideBySig
+    GetVoxelAt(VoxPosition): PrivateScope, Public, HideBySig
+    SetVoxelAt(SByte IsSignUnspecifiedByte, SByte IsSignUnspecifiedByte, SByte IsSignUnspecifiedByte, Byte): PrivateScope, Public, HideBySig
+    SetVoxelAt(VoxPosition, Byte): PrivateScope, Public, HideBySig
+    GetVoxelsAsDictionary(): PrivateScope, Public, HideBySig
+    GetVoxelDictionary(): PrivateScope, Public, HideBySig
+    SetVoxelDictionary(Dictionary`2): PrivateScope, Public, HideBySig
+    Shrink(): PrivateScope, Public, HideBySig
+    Dispose(): PrivateScope, Public, Final, Virtual, HideBySig
+Class VoxelEngine.FileSystem.Node: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    System.IDisposable
+  Fields:
+    System.Numerics.Vector3 TranslationVector : Public
+    System.Collections.Generic.Dictionary`2[VoxelEngine.FileSystem.VoxPosition,System.Byte] NodeVoxelDictionary : Public
+    glm.mat<3\,3\,float\,0>* RotationMatrix : Public
+    glm.mat<4\,4\,float\,0>* TransformationMatrix : Public
+  Methods:
+    Dispose(): PrivateScope, Public, Final, Virtual, HideBySig
+Class VoxelEngine.FileSystem.VoxFile: AutoLayout, AnsiClass, Class, Public
+  Interfaces:
+    System.IDisposable
+  Fields:
+    Int32 SupportedVersionNumber = 150 : Public, Static, Literal, HasDefault
+  Properties:
+    System.Collections.Generic.List`1[VoxelEngine.FileSystem.Node] ShapeNodeList 'get ' : 
+    System.Collections.Generic.List`1[VoxelEngine.FileSystem.VoxModel] Models 'get ' : 
+    VoxelEngine.FileSystem.VoxMaterial[] MaterialPalette 'get ' : 
+    VoxelEngine.FileSystem.VoxColor[] ColorPalette 'get ' : 
+    Int32 Version 'get ' : 
+    System.String Name 'get ' : 
+  Methods:
+    get_Name(): PrivateScope, Public, HideBySig, SpecialName
+    get_Version(): PrivateScope, Public, HideBySig, SpecialName
+    get_ColorPalette(): PrivateScope, Public, HideBySig, SpecialName
+    get_MaterialPalette(): PrivateScope, Public, HideBySig, SpecialName
+    get_Models(): PrivateScope, Public, HideBySig, SpecialName
+    get_ShapeNodeList(): PrivateScope, Public, HideBySig, SpecialName
+    Dispose(): PrivateScope, Public, Final, Virtual, HideBySig
+Class VoxelEngine.Controllers.VoxFileControl: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  Interfaces:
+    System.IDisposable
+  Methods:
+    Load(String, String): PrivateScope, Public, HideBySig
+    Unload(VoxFile): PrivateScope, Public, HideBySig
+    Unload(String): PrivateScope, Public, HideBySig
+    Get(String): PrivateScope, Public, HideBySig
+    GetNames(): PrivateScope, Public, HideBySig
+    Dispose(): PrivateScope, Public, Final, Virtual, HideBySig
+Class VoxelEngine.Controllers.VoxelObjectControl: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  Interfaces:
+    System.IDisposable
+  Properties:
+    System.Collections.Generic.IReadOnlyList`1[System.String] ObjectNames 'get ' : 
+  Methods:
+    get_ObjectNames(): PrivateScope, Public, HideBySig, SpecialName
+    CreateObjectFromModel(String, Single, Single, Single, String): PrivateScope, Public, HideBySig
+    CreateObjectFromModel(String, Vector3, String): PrivateScope, Public, HideBySig
+    CreateObjectFromAnimationSet(String, Single, Single, Single, String): PrivateScope, Public, HideBySig
+    CreateObjectFromAnimationSet(String, Vector3, String): PrivateScope, Public, HideBySig
+    CreateEmptyObject(String, Single, Single, Single, Single, Single, Single): PrivateScope, Public, HideBySig
+    CreateEmptyObject(String, Vector3, Vector3): PrivateScope, Public, HideBySig
+    DeleteObject(String): PrivateScope, Public, HideBySig
+    GetObjectState(String): PrivateScope, Public, HideBySig
+    GetObjectPosition(String): PrivateScope, Public, HideBySig
+    GetObjectExtent(String): PrivateScope, Public, HideBySig
+    GetObjectFrontVector(String): PrivateScope, Public, HideBySig
+    GetObjectVelocity(String): PrivateScope, Public, HideBySig
+    MoveObject(String, Single, Single, Single): PrivateScope, Public, HideBySig
+    MoveObject(String, Vector3): PrivateScope, Public, HideBySig
+    SetObjectPosition(String, Single, Single, Single): PrivateScope, Public, HideBySig
+    SetObjectPosition(String, Vector3): PrivateScope, Public, HideBySig
+    SetObjectVelocity(String, Single, Single, Single): PrivateScope, Public, HideBySig
+    SetObjectVelocity(String, Vector3): PrivateScope, Public, HideBySig
+    RotateObject(String, Int32, Single, Single, Single): PrivateScope, Public, HideBySig
+    RotateObject(String, Int32, Vector3): PrivateScope, Public, HideBySig
+    RotateObject(String, Int32): PrivateScope, Public, HideBySig
+    SetObjectDirection(String, Int32, Single, Single, Single): PrivateScope, Public, HideBySig
+    SetObjectDirection(String, Int32, Vector3): PrivateScope, Public, HideBySig
+    SetObjectDirection(String, Int32): PrivateScope, Public, HideBySig
+    ActivateObject(String): PrivateScope, Public, HideBySig
+    DeactivateObject(String): PrivateScope, Public, HideBySig
+    InsertVoxelIntoObject(String, Single, Single, Single, Int32): PrivateScope, Public, HideBySig
+    InsertVoxelIntoObject(String, Vector3, Int32): PrivateScope, Public, HideBySig
+    DeleteVoxelInObject(String, Single, Single, Single): PrivateScope, Public, HideBySig
+    DeleteVoxelInObject(String, Vector3): PrivateScope, Public, HideBySig
+    Dispose(): PrivateScope, Public, Final, Virtual, HideBySig
+Class VoxelEngine.Controllers.World: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  Interfaces:
+    System.IDisposable
+  Properties:
+    System.Numerics.Vector3 WorldSize 'get ' : 
+  Methods:
+    get_WorldSize(): PrivateScope, Public, HideBySig, SpecialName
+    AddNewChunk(Single, Single, Single): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    AddNewChunk(Vector3): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    DeleteChunk(Single, Single, Single): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    DeleteChunk(Vector3): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    DrawVoxel(Single, Single, Single, Int32): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    DrawVoxel(Vector3, Int32): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    Dispose(): PrivateScope, Public, Final, Virtual, HideBySig
+Class VoxelEngine.Controllers.WorldControl: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  Interfaces:
+    System.IDisposable
+  Properties:
+    VoxelEngine.Controllers.World RenderWorld 'get set' : 
+  Methods:
+    get_RenderWorld(): PrivateScope, Public, HideBySig, SpecialName
+    set_RenderWorld(World): PrivateScope, Public, HideBySig, SpecialName
+    AddWorld(String, Single, Single, Single): PrivateScope, Public, HideBySig
+    AddWorld(String, Vector3): PrivateScope, Public, HideBySig
+    RemoveWorld(String): PrivateScope, Public, HideBySig
+    GetWorldNames(): PrivateScope, Public, HideBySig
+    GetWorld(String): PrivateScope, Public, HideBySig
+    SetRenderWorld(String): PrivateScope, Public, HideBySig
+    Dispose(): PrivateScope, Public, Final, Virtual, HideBySig
+Class VoxelEngine.UI.UIContext: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  Interfaces:
+    System.IDisposable
+  Properties:
+    System.Collections.Generic.IDictionary`2[System.String,System.Object] ElementValues 'get ' : 
+  Methods:
+    get_ElementValues(): PrivateScope, Public, HideBySig, SpecialName
+    Dispose(): PrivateScope, Public, Final, Virtual, HideBySig
+Class VoxelEngine.WrapperInput.WrapperInput: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  Interfaces:
+    System.IDisposable
+  Methods:
+    SetCursorPosition(ValueTuple`2): PrivateScope, Public, HideBySig
+    GetCursorDelta(): PrivateScope, Public, HideBySig
+    GetCursorPosition(): PrivateScope, Public, HideBySig
+    GetScroll(): PrivateScope, Public, HideBySig
+    IsKeyboardKeyUp(WrappKeyboardKeys): PrivateScope, Public, HideBySig
+    IsKeyboardKeyDown(WrappKeyboardKeys): PrivateScope, Public, HideBySig
+    KeyboardKeyUp(WrappKeyboardKeys): PrivateScope, Public, HideBySig
+    KeyboardKeyDown(WrappKeyboardKeys): PrivateScope, Public, HideBySig
+    IsKeyPressedOnce(WrappKeyboardKeys): PrivateScope, Public, HideBySig
+    IsKeyReleasedOnce(WrappKeyboardKeys): PrivateScope, Public, HideBySig
+    IsMouseButtonUp(WrappMouseButtons): PrivateScope, Public, HideBySig
+    IsMouseButtonDown(WrappMouseButtons): PrivateScope, Public, HideBySig
+    MouseButtonUp(WrappMouseButtons): PrivateScope, Public, HideBySig
+    MouseButtonDown(WrappMouseButtons): PrivateScope, Public, HideBySig
+    IsMouseButtonPressedOnce(WrappMouseButtons): PrivateScope, Public, HideBySig
+    IsMouseButtonReleasedOnce(WrappMouseButtons): PrivateScope, Public, HideBySig
+    Dispose(): PrivateScope, Public, Final, Virtual, HideBySig
+Class VoxelEngine.Controllers.AnimationControl: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  Interfaces:
+    System.IDisposable
+  Properties:
+    System.Collections.Generic.IList`1[System.String] AnimationSetNames 'get ' : 
+  Methods:
+    get_AnimationSetNames(): PrivateScope, Public, HideBySig, SpecialName
+    ChangeAnimation(String, String, Boolean(HasFieldMarshal)): PrivateScope, Public, HideBySig
+    SetAnimationTempo(String, String, UInt32): PrivateScope, Public, HideBySig
+    GetCurrentAnimationType(String): PrivateScope, Public, HideBySig
+    Dispose(): PrivateScope, Public, Final, Virtual, HideBySig
+Class VoxelEngine.Util.StringHelper: AutoLayout, AnsiClass, Class, Public, Abstract, Sealed, BeforeFieldInit
+  Methods:
+    ConvertStdStringToSystemString(basic_string<char\,std::char_traits<char>\,std::allocator<char> >*): PrivateScope, Public, Static, HideBySig
+    ConvertSystemStringToStdString(basic_string<char\,std::char_traits<char>\,std::allocator<char> >*, String): PrivateScope, Public, Static, HideBySig
+Struct VoxelEngine.FileSystem.MaterialTypes: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    VoxelEngine.FileSystem.MaterialTypes Diffuse = 0 : Public, Static, Literal, HasDefault
+    VoxelEngine.FileSystem.MaterialTypes Metal = 1 : Public, Static, Literal, HasDefault
+    VoxelEngine.FileSystem.MaterialTypes Glass = 2 : Public, Static, Literal, HasDefault
+    VoxelEngine.FileSystem.MaterialTypes Emissive = 3 : Public, Static, Literal, HasDefault
+Struct VoxelEngine.UI.UIWindowFlags: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    VoxelEngine.UI.UIWindowFlags None = 0 : Public, Static, Literal, HasDefault
+    VoxelEngine.UI.UIWindowFlags NoTitleBar = 1 : Public, Static, Literal, HasDefault
+    VoxelEngine.UI.UIWindowFlags NoResize = 2 : Public, Static, Literal, HasDefault
+    VoxelEngine.UI.UIWindowFlags NoMove = 4 : Public, Static, Literal, HasDefault
+    VoxelEngine.UI.UIWindowFlags NoScrollbar = 8 : Public, Static, Literal, HasDefault
+    VoxelEngine.UI.UIWindowFlags NoScrollWithMouse = 16 : Public, Static, Literal, HasDefault
+    VoxelEngine.UI.UIWindowFlags NoCollapse = 32 : Public, Static, Literal, HasDefault
+    VoxelEngine.UI.UIWindowFlags AlwaysAutoResize = 64 : Public, Static, Literal, HasDefault
+    VoxelEngine.UI.UIWindowFlags NoBackground = 128 : Public, Static, Literal, HasDefault
+    VoxelEngine.UI.UIWindowFlags NoSavedSettings = 256 : Public, Static, Literal, HasDefault
+    VoxelEngine.UI.UIWindowFlags NoMouseInputs = 512 : Public, Static, Literal, HasDefault
+    VoxelEngine.UI.UIWindowFlags MenuBar = 1024 : Public, Static, Literal, HasDefault
+    VoxelEngine.UI.UIWindowFlags HorizontalScrollbar = 2048 : Public, Static, Literal, HasDefault
+    VoxelEngine.UI.UIWindowFlags NoBringToFrontOnFocus = 8192 : Public, Static, Literal, HasDefault
+    VoxelEngine.UI.UIWindowFlags AlwaysVerticalScrollbar = 16384 : Public, Static, Literal, HasDefault
+    VoxelEngine.UI.UIWindowFlags AlwaysHorizontalScrollbar = 32768 : Public, Static, Literal, HasDefault
+    VoxelEngine.UI.UIWindowFlags AlwaysUseWindowPadding = 65536 : Public, Static, Literal, HasDefault
+    VoxelEngine.UI.UIWindowFlags NoNavInputs = 262144 : Public, Static, Literal, HasDefault
+    VoxelEngine.UI.UIWindowFlags NoNavFocus = 524288 : Public, Static, Literal, HasDefault
+    VoxelEngine.UI.UIWindowFlags UnsavedDocument = 1048576 : Public, Static, Literal, HasDefault
+    VoxelEngine.UI.UIWindowFlags NoNav = 786432 : Public, Static, Literal, HasDefault
+    VoxelEngine.UI.UIWindowFlags NoDecoration = 43 : Public, Static, Literal, HasDefault
+    VoxelEngine.UI.UIWindowFlags NoInputs = 786944 : Public, Static, Literal, HasDefault
+Struct VoxelEngine.WrapperInput.WrappMouseButtons: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    VoxelEngine.WrapperInput.WrappMouseButtons One = 0 : Public, Static, Literal, HasDefault
+    VoxelEngine.WrapperInput.WrappMouseButtons Left = 0 : Public, Static, Literal, HasDefault
+    VoxelEngine.WrapperInput.WrappMouseButtons Two = 1 : Public, Static, Literal, HasDefault
+    VoxelEngine.WrapperInput.WrappMouseButtons Right = 1 : Public, Static, Literal, HasDefault
+    VoxelEngine.WrapperInput.WrappMouseButtons Three = 2 : Public, Static, Literal, HasDefault
+    VoxelEngine.WrapperInput.WrappMouseButtons Middle = 2 : Public, Static, Literal, HasDefault
+    VoxelEngine.WrapperInput.WrappMouseButtons Four = 3 : Public, Static, Literal, HasDefault
+    VoxelEngine.WrapperInput.WrappMouseButtons Five = 4 : Public, Static, Literal, HasDefault
+Struct VoxelEngine.WrapperInput.WrappKeyboardKeys: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    VoxelEngine.WrapperInput.WrappKeyboardKeys Space = 32 : Public, Static, Literal, HasDefault
+    VoxelEngine.WrapperInput.WrappKeyboardKeys Apostrophe = 39 : Public, Static, Literal, HasDefault
+    VoxelEngine.WrapperInput.WrappKeyboardKeys Comma = 44 : Public, Static, Literal, HasDefault
+    VoxelEngine.WrapperInput.WrappKeyboardKeys Minus = 45 : Public, Static, Literal, HasDefault
+    VoxelEngine.WrapperInput.WrappKeyboardKeys Period = 46 : Public, Static, Literal, HasDefault
+    VoxelEngine.WrapperInput.WrappKeyboardKeys Slash = 47 : Public, Static, Literal, HasDefault
+    VoxelEngine.WrapperInput.WrappKeyboardKeys Zero = 48 : Public, Static, Literal, HasDefault
+    VoxelEngine.WrapperInput.WrappKeyboardKeys One = 49 : Public, Static, Literal, HasDefault
+    VoxelEngine.WrapperInput.WrappKeyboardKeys Two = 50 : Public, Static, Literal, HasDefault
+    VoxelEngine.WrapperInput.WrappKeyboardKeys Three = 51 : Public, Static, Literal, HasDefault
+    VoxelEngine.WrapperInput.WrappKeyboardKeys Four = 52 : Public, Static, Literal, HasDefault
+    VoxelEngine.WrapperInput.WrappKeyboardKeys Five = 53 : Public, Static, Literal, HasDefault
+    VoxelEngine.WrapperInput.WrappKeyboardKeys Six = 54 : Public, Static, Literal, HasDefault
+    VoxelEngine.WrapperInput.WrappKeyboardKeys Seven = 55 : Public, Static, Literal, HasDefault
+    VoxelEngine.WrapperInput.WrappKeyboardKeys Eight = 56 : Public, Static, Literal, HasDefault
+    VoxelEngine.WrapperInput.WrappKeyboardKeys Nine = 57 : Public, Static, Literal, HasDefault
+    VoxelEngine.WrapperInput.WrappKeyboardKeys Semicolon = 59 : Public, Static, Literal, HasDefault
+    VoxelEngine.WrapperInput.WrappKeyboardKeys Equal = 61 : Public, Static, Literal, HasDefault
+    VoxelEngine.WrapperInput.WrappKeyboardKeys A = 65 : Public, Static, Literal, HasDefault
+    VoxelEngine.WrapperInput.WrappKeyboardKeys B = 66 : Public, Static, Literal, HasDefault
+    VoxelEngine.WrapperInput.WrappKeyboardKeys C = 67 : Public, Static, Literal, HasDefault
+    VoxelEngine.WrapperInput.WrappKeyboardKeys D = 68 : Public, Static, Literal, HasDefault
+    VoxelEngine.WrapperInput.WrappKeyboardKeys E = 69 : Public, Static, Literal, HasDefault
+    VoxelEngine.WrapperInput.WrappKeyboardKeys F = 70 : Public, Static, Literal, HasDefault
+    VoxelEngine.WrapperInput.WrappKeyboardKeys G = 71 : Public, Static, Literal, HasDefault
+    VoxelEngine.WrapperInput.WrappKeyboardKeys H = 72 : Public, Static, Literal, HasDefault
+    VoxelEngine.WrapperInput.WrappKeyboardKeys I = 73 : Public, Static, Literal, HasDefault
+    VoxelEngine.WrapperInput.WrappKeyboardKeys J = 74 : Public, Static, Literal, HasDefault
+    VoxelEngine.WrapperInput.WrappKeyboardKeys K = 75 : Public, Static, Literal, HasDefault
+    VoxelEngine.WrapperInput.WrappKeyboardKeys L = 76 : Public, Static, Literal, HasDefault
+    VoxelEngine.WrapperInput.WrappKeyboardKeys M = 77 : Public, Static, Literal, HasDefault
+    VoxelEngine.WrapperInput.WrappKeyboardKeys N = 78 : Public, Static, Literal, HasDefault
+    VoxelEngine.WrapperInput.WrappKeyboardKeys O = 79 : Public, Static, Literal, HasDefault
+    VoxelEngine.WrapperInput.WrappKeyboardKeys P = 80 : Public, Static, Literal, HasDefault
+    VoxelEngine.WrapperInput.WrappKeyboardKeys Q = 81 : Public, Static, Literal, HasDefault
+    VoxelEngine.WrapperInput.WrappKeyboardKeys R = 82 : Public, Static, Literal, HasDefault
+    VoxelEngine.WrapperInput.WrappKeyboardKeys S = 83 : Public, Static, Literal, HasDefault
+    VoxelEngine.WrapperInput.WrappKeyboardKeys T = 84 : Public, Static, Literal, HasDefault
+    VoxelEngine.WrapperInput.WrappKeyboardKeys U = 85 : Public, Static, Literal, HasDefault
+    VoxelEngine.WrapperInput.WrappKeyboardKeys V = 86 : Public, Static, Literal, HasDefault
+    VoxelEngine.WrapperInput.WrappKeyboardKeys W = 87 : Public, Static, Literal, HasDefault
+    VoxelEngine.WrapperInput.WrappKeyboardKeys X = 88 : Public, Static, Literal, HasDefault
+    VoxelEngine.WrapperInput.WrappKeyboardKeys Y = 89 : Public, Static, Literal, HasDefault
+    VoxelEngine.WrapperInput.WrappKeyboardKeys Z = 90 : Public, Static, Literal, HasDefault
+    VoxelEngine.WrapperInput.WrappKeyboardKeys LeftBracket = 91 : Public, Static, Literal, HasDefault
+    VoxelEngine.WrapperInput.WrappKeyboardKeys BackSlash = 92 : Public, Static, Literal, HasDefault
+    VoxelEngine.WrapperInput.WrappKeyboardKeys RightBracket = 93 : Public, Static, Literal, HasDefault
+    VoxelEngine.WrapperInput.WrappKeyboardKeys GraveAccent = 96 : Public, Static, Literal, HasDefault
+    VoxelEngine.WrapperInput.WrappKeyboardKeys WorldOne = 161 : Public, Static, Literal, HasDefault
+    VoxelEngine.WrapperInput.WrappKeyboardKeys WorldTwo = 162 : Public, Static, Literal, HasDefault
+    VoxelEngine.WrapperInput.WrappKeyboardKeys Escape = 256 : Public, Static, Literal, HasDefault
+    VoxelEngine.WrapperInput.WrappKeyboardKeys Enter = 257 : Public, Static, Literal, HasDefault
+    VoxelEngine.WrapperInput.WrappKeyboardKeys Tab = 258 : Public, Static, Literal, HasDefault
+    VoxelEngine.WrapperInput.WrappKeyboardKeys Backspace = 259 : Public, Static, Literal, HasDefault
+    VoxelEngine.WrapperInput.WrappKeyboardKeys Insert = 260 : Public, Static, Literal, HasDefault
+    VoxelEngine.WrapperInput.WrappKeyboardKeys Delete = 261 : Public, Static, Literal, HasDefault
+    VoxelEngine.WrapperInput.WrappKeyboardKeys Right = 262 : Public, Static, Literal, HasDefault
+    VoxelEngine.WrapperInput.WrappKeyboardKeys Left = 263 : Public, Static, Literal, HasDefault
+    VoxelEngine.WrapperInput.WrappKeyboardKeys Down = 264 : Public, Static, Literal, HasDefault
+    VoxelEngine.WrapperInput.WrappKeyboardKeys Up = 265 : Public, Static, Literal, HasDefault
+    VoxelEngine.WrapperInput.WrappKeyboardKeys PageUp = 266 : Public, Static, Literal, HasDefault
+    VoxelEngine.WrapperInput.WrappKeyboardKeys PageDown = 267 : Public, Static, Literal, HasDefault
+    VoxelEngine.WrapperInput.WrappKeyboardKeys Home = 268 : Public, Static, Literal, HasDefault
+    VoxelEngine.WrapperInput.WrappKeyboardKeys End = 269 : Public, Static, Literal, HasDefault
+    VoxelEngine.WrapperInput.WrappKeyboardKeys CapsLock = 280 : Public, Static, Literal, HasDefault
+    VoxelEngine.WrapperInput.WrappKeyboardKeys ScrollLock = 281 : Public, Static, Literal, HasDefault
+    VoxelEngine.WrapperInput.WrappKeyboardKeys NumLock = 282 : Public, Static, Literal, HasDefault
+    VoxelEngine.WrapperInput.WrappKeyboardKeys PrintScreen = 283 : Public, Static, Literal, HasDefault
+    VoxelEngine.WrapperInput.WrappKeyboardKeys Pause = 284 : Public, Static, Literal, HasDefault
+    VoxelEngine.WrapperInput.WrappKeyboardKeys F1 = 290 : Public, Static, Literal, HasDefault
+    VoxelEngine.WrapperInput.WrappKeyboardKeys F2 = 291 : Public, Static, Literal, HasDefault
+    VoxelEngine.WrapperInput.WrappKeyboardKeys F3 = 292 : Public, Static, Literal, HasDefault
+    VoxelEngine.WrapperInput.WrappKeyboardKeys F4 = 293 : Public, Static, Literal, HasDefault
+    VoxelEngine.WrapperInput.WrappKeyboardKeys F5 = 294 : Public, Static, Literal, HasDefault
+    VoxelEngine.WrapperInput.WrappKeyboardKeys F6 = 295 : Public, Static, Literal, HasDefault
+    VoxelEngine.WrapperInput.WrappKeyboardKeys F7 = 296 : Public, Static, Literal, HasDefault
+    VoxelEngine.WrapperInput.WrappKeyboardKeys F8 = 297 : Public, Static, Literal, HasDefault
+    VoxelEngine.WrapperInput.WrappKeyboardKeys F9 = 298 : Public, Static, Literal, HasDefault
+    VoxelEngine.WrapperInput.WrappKeyboardKeys F10 = 299 : Public, Static, Literal, HasDefault
+    VoxelEngine.WrapperInput.WrappKeyboardKeys F11 = 300 : Public, Static, Literal, HasDefault
+    VoxelEngine.WrapperInput.WrappKeyboardKeys F12 = 301 : Public, Static, Literal, HasDefault
+    VoxelEngine.WrapperInput.WrappKeyboardKeys F13 = 302 : Public, Static, Literal, HasDefault
+    VoxelEngine.WrapperInput.WrappKeyboardKeys F14 = 303 : Public, Static, Literal, HasDefault
+    VoxelEngine.WrapperInput.WrappKeyboardKeys F15 = 304 : Public, Static, Literal, HasDefault
+    VoxelEngine.WrapperInput.WrappKeyboardKeys F16 = 305 : Public, Static, Literal, HasDefault
+    VoxelEngine.WrapperInput.WrappKeyboardKeys F17 = 306 : Public, Static, Literal, HasDefault
+    VoxelEngine.WrapperInput.WrappKeyboardKeys F18 = 307 : Public, Static, Literal, HasDefault
+    VoxelEngine.WrapperInput.WrappKeyboardKeys F19 = 308 : Public, Static, Literal, HasDefault
+    VoxelEngine.WrapperInput.WrappKeyboardKeys F20 = 309 : Public, Static, Literal, HasDefault
+    VoxelEngine.WrapperInput.WrappKeyboardKeys F21 = 310 : Public, Static, Literal, HasDefault
+    VoxelEngine.WrapperInput.WrappKeyboardKeys F22 = 311 : Public, Static, Literal, HasDefault
+    VoxelEngine.WrapperInput.WrappKeyboardKeys F23 = 312 : Public, Static, Literal, HasDefault
+    VoxelEngine.WrapperInput.WrappKeyboardKeys F24 = 313 : Public, Static, Literal, HasDefault
+    VoxelEngine.WrapperInput.WrappKeyboardKeys F25 = 314 : Public, Static, Literal, HasDefault
+    VoxelEngine.WrapperInput.WrappKeyboardKeys NumZero = 320 : Public, Static, Literal, HasDefault
+    VoxelEngine.WrapperInput.WrappKeyboardKeys NumOne = 321 : Public, Static, Literal, HasDefault
+    VoxelEngine.WrapperInput.WrappKeyboardKeys NumTwo = 322 : Public, Static, Literal, HasDefault
+    VoxelEngine.WrapperInput.WrappKeyboardKeys NumThree = 323 : Public, Static, Literal, HasDefault
+    VoxelEngine.WrapperInput.WrappKeyboardKeys NumFour = 324 : Public, Static, Literal, HasDefault
+    VoxelEngine.WrapperInput.WrappKeyboardKeys NumFive = 325 : Public, Static, Literal, HasDefault
+    VoxelEngine.WrapperInput.WrappKeyboardKeys NumSix = 326 : Public, Static, Literal, HasDefault
+    VoxelEngine.WrapperInput.WrappKeyboardKeys NumSeven = 327 : Public, Static, Literal, HasDefault
+    VoxelEngine.WrapperInput.WrappKeyboardKeys NumEight = 328 : Public, Static, Literal, HasDefault
+    VoxelEngine.WrapperInput.WrappKeyboardKeys NumNine = 329 : Public, Static, Literal, HasDefault
+    VoxelEngine.WrapperInput.WrappKeyboardKeys NumComma = 330 : Public, Static, Literal, HasDefault
+    VoxelEngine.WrapperInput.WrappKeyboardKeys NumDivide = 331 : Public, Static, Literal, HasDefault
+    VoxelEngine.WrapperInput.WrappKeyboardKeys NumMultiply = 332 : Public, Static, Literal, HasDefault
+    VoxelEngine.WrapperInput.WrappKeyboardKeys NumSubtract = 333 : Public, Static, Literal, HasDefault
+    VoxelEngine.WrapperInput.WrappKeyboardKeys NumAdd = 334 : Public, Static, Literal, HasDefault
+    VoxelEngine.WrapperInput.WrappKeyboardKeys NumEnter = 335 : Public, Static, Literal, HasDefault
+    VoxelEngine.WrapperInput.WrappKeyboardKeys NumEqual = 336 : Public, Static, Literal, HasDefault
+    VoxelEngine.WrapperInput.WrappKeyboardKeys LeftShift = 340 : Public, Static, Literal, HasDefault
+    VoxelEngine.WrapperInput.WrappKeyboardKeys LeftControl = 341 : Public, Static, Literal, HasDefault
+    VoxelEngine.WrapperInput.WrappKeyboardKeys LeftAlt = 342 : Public, Static, Literal, HasDefault
+    VoxelEngine.WrapperInput.WrappKeyboardKeys LeftCaps = 343 : Public, Static, Literal, HasDefault
+    VoxelEngine.WrapperInput.WrappKeyboardKeys RightShift = 344 : Public, Static, Literal, HasDefault
+    VoxelEngine.WrapperInput.WrappKeyboardKeys RightControl = 345 : Public, Static, Literal, HasDefault
+    VoxelEngine.WrapperInput.WrappKeyboardKeys RightAlt = 346 : Public, Static, Literal, HasDefault
+    VoxelEngine.WrapperInput.WrappKeyboardKeys RightCaps = 347 : Public, Static, Literal, HasDefault
+    VoxelEngine.WrapperInput.WrappKeyboardKeys Menu = 348 : Public, Static, Literal, HasDefault
+    VoxelEngine.WrapperInput.WrappKeyboardKeys Last = 348 : Public, Static, Literal, HasDefault
+Struct VoxelEngine.AudioSystem.AudioType: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    VoxelEngine.AudioSystem.AudioType Music = 1 : Public, Static, Literal, HasDefault
+    VoxelEngine.AudioSystem.AudioType Fx = 2 : Public, Static, Literal, HasDefault
+    VoxelEngine.AudioSystem.AudioType Voices = 3 : Public, Static, Literal, HasDefault
+Class VoxelEngine.Timer: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  Properties:
+    Single FramesPerSecond 'get ' : 
+    Single TimeBetweenUpdatesInSeconds 'get ' : 
+    Single TimeBetweenDrawsInSeconds 'get ' : 
+    Int64 CurrentTimeInMilliseconds 'get ' : 
+    Single CurrentTimeInSeconds 'get ' : 
+    Single FrameInterpolationFactor 'get ' : 
+    Int64 UpdateTimeInTicks 'get set' : 
+    Int64 TicksPerTenMicroseconds 'get ' : 
+  Methods:
+    get_TicksPerTenMicroseconds(): PrivateScope, Public, Static, HideBySig, SpecialName
+    get_UpdateTimeInTicks(): PrivateScope, Public, HideBySig, SpecialName
+    set_UpdateTimeInTicks(Int64): PrivateScope, Public, HideBySig, SpecialName
+    get_FrameInterpolationFactor(): PrivateScope, Public, HideBySig, SpecialName
+    get_CurrentTimeInSeconds(): PrivateScope, Public, HideBySig, SpecialName
+    get_CurrentTimeInMilliseconds(): PrivateScope, Public, HideBySig, SpecialName
+    get_TimeBetweenDrawsInSeconds(): PrivateScope, Public, HideBySig, SpecialName
+    get_TimeBetweenUpdatesInSeconds(): PrivateScope, Public, HideBySig, SpecialName
+    get_FramesPerSecond(): PrivateScope, Public, HideBySig, SpecialName
+Class VoxelEngine.Controllers.BiomControl: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    CreatePlaneWorld(String, Single, Single, Single, Single, Single, Single): PrivateScope, Public, HideBySig
+    CreatePlaneWorld(String, Vector3, Vector3): PrivateScope, Public, HideBySig
+    CreateMinecraftWorld(String, Single, Single, Single, Single, Single, Single): PrivateScope, Public, HideBySig
+    CreateMinecraftWorld(String, Vector3, Vector3): PrivateScope, Public, HideBySig
+Struct VoxelEngine.Biom.Enums.LandSize: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    VoxelEngine.Biom.Enums.LandSize Little = 32 : Public, Static, Literal, HasDefault
+    VoxelEngine.Biom.Enums.LandSize Medium = 64 : Public, Static, Literal, HasDefault
+    VoxelEngine.Biom.Enums.LandSize Large = 128 : Public, Static, Literal, HasDefault
+    VoxelEngine.Biom.Enums.LandSize ExtraLarge = 256 : Public, Static, Literal, HasDefault
+Class VoxelEngine.Controllers.LightControl: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  Properties:
+    System.String ActiveSunName 'get ' : 
+  Methods:
+    get_ActiveSunName(): PrivateScope, Public, HideBySig, SpecialName
+    CreateAndAddSun(String, Single, Single, Single, Single, Single): PrivateScope, Public, HideBySig
+    CreateAndAddSun(String, Single, Single, Vector3): PrivateScope, Public, HideBySig
+    RemoveSun(String): PrivateScope, Public, HideBySig
+    SelectActiveSun(String): PrivateScope, Public, HideBySig
+    GetSunNames(): PrivateScope, Public, HideBySig
+    ChangeYaw(String, Single): PrivateScope, Public, HideBySig
+    ChangePitch(String, Single): PrivateScope, Public, HideBySig
+    ChangeColor(String, Single, Single, Single): PrivateScope, Public, HideBySig
+    ChangeColor(String, Vector3): PrivateScope, Public, HideBySig
+    ActivateShadows(String): PrivateScope, Public, HideBySig
+    DeactivateShadows(String): PrivateScope, Public, HideBySig
+    SetPositionOfShadowcasters(String, Single, Single, Single): PrivateScope, Public, HideBySig
+    SetPositionOfShadowcasters(String, Vector3): PrivateScope, Public, HideBySig
+    GetPositionOfShadowcasters(String): PrivateScope, Public, HideBySig
+Class VoxelEngine.Controllers.AudioControl: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  Interfaces:
+    System.IDisposable
+  Methods:
+    SetMasterVolume(Single): PrivateScope, Public, HideBySig
+    SetMusicVolume(Single): PrivateScope, Public, HideBySig
+    SetFxVolume(Single): PrivateScope, Public, HideBySig
+    SetVoicesVolume(Single): PrivateScope, Public, HideBySig
+    SetMasterVelocity(Single, Single, Single): PrivateScope, Public, HideBySig
+    SetMasterVelocity(Vector3): PrivateScope, Public, HideBySig
+    SetMasterOrientation(Single, Single, Single): PrivateScope, Public, HideBySig
+    SetMasterOrientation(Vector3): PrivateScope, Public, HideBySig
+    SetMasterPosition(Single, Single, Single): PrivateScope, Public, HideBySig
+    SetMasterPosition(Vector3): PrivateScope, Public, HideBySig
+    AddSound(String, String, AudioType): PrivateScope, Public, HideBySig
+    SetSoundPosition(String, Single, Single, Single, AudioType): PrivateScope, Public, HideBySig
+    SetSoundPosition(String, Vector3, AudioType): PrivateScope, Public, HideBySig
+    GetSoundPosition(String, AudioType): PrivateScope, Public, HideBySig
+    SetSoundVolume(String, Single, AudioType): PrivateScope, Public, HideBySig
+    SetSoundVelocity(String, Single, Single, Single, AudioType): PrivateScope, Public, HideBySig
+    SetSoundVelocity(String, Vector3, AudioType): PrivateScope, Public, HideBySig
+    SetSoundOrientation(String, Single, Single, Single, AudioType): PrivateScope, Public, HideBySig
+    SetSoundOrientation(String, Vector3, AudioType): PrivateScope, Public, HideBySig
+    SetSoundPitch(String, Single, AudioType): PrivateScope, Public, HideBySig
+    Play(String, AudioType): PrivateScope, Public, HideBySig
+    Stop(String, AudioType): PrivateScope, Public, HideBySig
+    Pause(String, AudioType): PrivateScope, Public, HideBySig
+    Rewind(String, AudioType): PrivateScope, Public, HideBySig
+    Looping(String, Boolean(HasFieldMarshal), AudioType): PrivateScope, Public, HideBySig
+    Dispose(): PrivateScope, Public, Final, Virtual, HideBySig
+Class VoxelEngine.Controllers.CameraControl: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  Interfaces:
+    System.IDisposable
+  Properties:
+    System.String ActiveCameraName 'get ' : 
+  Methods:
+    get_ActiveCameraName(): PrivateScope, Public, HideBySig, SpecialName
+    AddCamera(String, ICamera): PrivateScope, Public, HideBySig
+    RemoveCamera(String): PrivateScope, Public, HideBySig
+    SelectActiveCamera(String): PrivateScope, Public, HideBySig
+    CreateAndAddDefaultCamera(String, WrapperInput): PrivateScope, Public, HideBySig
+    CreateAndAddTrackingCamera(String, ITrackable, Single, Single, Single, Single, Single, Single): PrivateScope, Public, HideBySig
+    CreateAndAddTrackingCamera(String, ITrackable, Vector3, Vector3): PrivateScope, Public, HideBySig
+    CreateAndAddTrackingCamera(String, String, Single, Single, Single, Single, Single, Single): PrivateScope, Public, HideBySig
+    CreateAndAddTrackingCamera(String, String, Vector3, Vector3): PrivateScope, Public, HideBySig
+    CreateAndAddFollowingCamera(String, ITrackable, Single, Single, Single, Single, Single, Single): PrivateScope, Public, HideBySig
+    CreateAndAddFollowingCamera(String, ITrackable, Vector3, Vector3): PrivateScope, Public, HideBySig
+    CreateAndAddFollowingCamera(String, String, Single, Single, Single, Single, Single, Single): PrivateScope, Public, HideBySig
+    CreateAndAddFollowingCamera(String, String, Vector3, Vector3): PrivateScope, Public, HideBySig
+    CreateAndAddRoleplayCamera(String, ITrackable, Single, Single, Single, Single, Single, Single, WrapperInput): PrivateScope, Public, HideBySig
+    CreateAndAddRoleplayCamera(String, ITrackable, Vector3, Vector3, WrapperInput): PrivateScope, Public, HideBySig
+    CreateAndAddRoleplayCamera(String, String, Single, Single, Single, Single, Single, Single, WrapperInput): PrivateScope, Public, HideBySig
+    CreateAndAddRoleplayCamera(String, String, Vector3, Vector3, WrapperInput): PrivateScope, Public, HideBySig
+    UpdateEulerAngles(Single, Single, Single): PrivateScope, Public, HideBySig
+    UpdateEulerAngles(Vector3): PrivateScope, Public, HideBySig
+    UpdateOffset(Single, Single, Single): PrivateScope, Public, HideBySig
+    UpdateOffset(Vector3): PrivateScope, Public, HideBySig
+    ChangePinnedObject(ITrackable): PrivateScope, Public, HideBySig
+    ActivateRoleplayFreeSight(): PrivateScope, Public, HideBySig
+    DeactivateRoleplayFreeSight(): PrivateScope, Public, HideBySig
+    PrintActiveCameraData(): PrivateScope, Public, HideBySig
+    GetCameraNames(): PrivateScope, Public, HideBySig
+    GetPosition(): PrivateScope, Public, HideBySig
+    GetRotation(): PrivateScope, Public, HideBySig
+    GetFront(): PrivateScope, Public, HideBySig
+    GetRight(): PrivateScope, Public, HideBySig
+    GetUp(): PrivateScope, Public, HideBySig
+    GetFOV(): PrivateScope, Public, HideBySig
+    GetNear(): PrivateScope, Public, HideBySig
+    GetFar(): PrivateScope, Public, HideBySig
+    GetAspectRatio(): PrivateScope, Public, HideBySig
+    Dispose(): PrivateScope, Public, Final, Virtual, HideBySig
+Class VoxelEngine.Controllers.ColorPaletteControl: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  Interfaces:
+    System.IDisposable
+  Properties:
+    EngineCore.Palette.RGBA RenderColorPalette 'get set' : 
+  Methods:
+    get_RenderColorPalette(RGBA*): PrivateScope, Public, HideBySig, SpecialName
+    set_RenderColorPalette(RGBA*): PrivateScope, Public, HideBySig, SpecialName
+    AddColorPaletteWithDefaultValues(String): PrivateScope, Public, HideBySig
+    AddColorPaletteWithOwnPalett(String, UInt32* IsConst IsConst, Byte): PrivateScope, Public, HideBySig
+    AddColorPaletteWithMagicaVoxelPalette(String, VoxColor[]): PrivateScope, Public, HideBySig
+    AddColorToAColorPalette(String, Int32, Int32, Int32, Int32): PrivateScope, Public, HideBySig
+    AddColorToAColorPalette(String, UInt32): PrivateScope, Public, HideBySig
+    OverrideColor(String, Int32, Int32, Int32, Int32, Int32): PrivateScope, Public, HideBySig
+    OverrideColor(String, UInt32, Int32): PrivateScope, Public, HideBySig
+    RemoveColorPalette(String): PrivateScope, Public, HideBySig
+    RotateColorIndexUpwards(String, Int32, Int32): PrivateScope, Public, HideBySig
+    RotateColorIndexDownwards(String, Int32, Int32): PrivateScope, Public, HideBySig
+    GetColorPaletteNames(): PrivateScope, Public, HideBySig
+    SetRenderColorPalette(String): PrivateScope, Public, HideBySig
+    Dispose(): PrivateScope, Public, Final, Virtual, HideBySig
+Class VoxelEngine.Controllers.ModelControl: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    System.IDisposable
+  Properties:
+    System.Collections.Generic.IReadOnlyList`1[System.String] AnimationSetNames 'get ' : 
+    System.Collections.Generic.IReadOnlyList`1[System.String] ModelNames 'get ' : 
+  Methods:
+    get_ModelNames(): PrivateScope, Public, HideBySig, SpecialName
+    get_AnimationSetNames(): PrivateScope, Public, HideBySig, SpecialName
+    LoadVoxelModel(String, String): PrivateScope, Public, HideBySig
+    LoadAnimationSet(String, String): PrivateScope, Public, HideBySig
+    UnloadVoxelModel(String): PrivateScope, Public, HideBySig
+    UnloadAnimationSet(String): PrivateScope, Public, HideBySig
+    DrawVoxelModel(String, Single, Single, Single, Int32, Single, Single, Single): PrivateScope, Public, HideBySig
+    DrawVoxelModel(String, Vector3, Int32, Vector3): PrivateScope, Public, HideBySig
+    DrawVoxelModel(String, Single, Single, Single, Int32): PrivateScope, Public, HideBySig
+    DrawVoxelModel(String, Vector3, Int32): PrivateScope, Public, HideBySig
+    DrawVoxelModel(String, Single, Single, Single): PrivateScope, Public, HideBySig
+    DrawVoxelModel(String, Vector3): PrivateScope, Public, HideBySig
+    GetModelExtent(String): PrivateScope, Public, HideBySig
+    RotateModel(String, Int32, Single, Single, Single): PrivateScope, Public, HideBySig
+    RotateModel(String, Int32, Vector3): PrivateScope, Public, HideBySig
+    RotateModel(String, Int32): PrivateScope, Public, HideBySig
+    SetModelDirection(String, Int32, Single, Single, Single): PrivateScope, Public, HideBySig
+    SetModelDirection(String, Int32, Vector3): PrivateScope, Public, HideBySig
+    SetModelDirection(String, Int32): PrivateScope, Public, HideBySig
+    RotateAnimationSet(String, Int32, Single, Single, Single): PrivateScope, Public, HideBySig
+    RotateAnimationSet(String, Int32, Vector3): PrivateScope, Public, HideBySig
+    RotateAnimationSet(String, Int32): PrivateScope, Public, HideBySig
+    SetAnimationSetDirection(String, Int32, Single, Single, Single): PrivateScope, Public, HideBySig
+    SetAnimationSetDirection(String, Int32, Vector3): PrivateScope, Public, HideBySig
+    SetAnimationSetDirection(String, Int32): PrivateScope, Public, HideBySig
+    ResetVoxelModelOrientation(String): PrivateScope, Public, HideBySig
+    ResetAnimationSetModelsOrientation(String): PrivateScope, Public, HideBySig
+    Dispose(): PrivateScope, Public, Final, Virtual, HideBySig
+Interface VoxelEngine.IRenderer: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract, BeforeFieldInit
+  Methods:
+    EnableShadows(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    DisableShadows(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    EnableSkyBox(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    DisableSkyBox(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    EnableBloom(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    DisableBloom(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    EnableToneMapping(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    DisableToneMapping(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    EnableIsFxaa(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    DisableIsFxaa(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    EnableRenderingWithColorPalette(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    DisableRenderingWithColorPalette(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    EnableColorTransparency(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    DisableColorTransparency(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+Interface VoxelEngine.IEngine: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract, BeforeFieldInit
+  Properties:
+    Int64 FrameCount 'get ' : 
+    EngineCore.Window.GLFWWindow* Window 'get ' : 
+    EngineCore.Input.InputSystem* Input 'get ' : 
+  Methods:
+    get_Input(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_Window(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_FrameCount(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+Class VoxelEngine.RendererBase: AutoLayout, AnsiClass, Class, Public, Abstract, BeforeFieldInit
+Class VoxelEngine.PhysicallyBasedRenderer: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :VoxelEngine.RendererBase
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    VoxelEngine.IRenderer
+    System.IDisposable
+  Methods:
+    EnableShadows(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    DisableShadows(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    EnableSkyBox(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    DisableSkyBox(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    EnableBloom(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    DisableBloom(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    EnableToneMapping(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    DisableToneMapping(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    EnableIsFxaa(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    DisableIsFxaa(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    EnableRenderingWithColorPalette(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    DisableRenderingWithColorPalette(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    EnableColorTransparency(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    DisableColorTransparency(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    Dispose(): PrivateScope, Public, Final, Virtual, HideBySig
+Struct VoxelEngine.EngineCreateInfo: AutoLayout, AnsiClass, Class, Public, SequentialLayout, Sealed, BeforeFieldInit
+  :System.ValueType
+    Void .ctor(System.String, Int32, Int32, Int64): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    System.String Title : Public
+    Int32 Width : Public
+    Int32 Height : Public
+    Int64 TimeStepInMicroSeconds : Public
+Class VoxelEngine.Engine: AutoLayout, AnsiClass, Class, Public, Abstract, BeforeFieldInit
+    Void .ctor(VoxelEngine.EngineCreateInfo): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    VoxelEngine.IEngine
+  Fields:
+    Int64 DefaultFrameTime IsConst : Public, Static
+  Properties:
+    Boolean CheckSystemIsEnabled 'get set' : 
+    VoxelEngine.Timer Timer 'get ' : 
+    System.ValueTuple`2[System.Int32,System.Int32] Resolution 'get ' : 
+    VoxelEngine.WrapperInput.WrapperInput WrapInput 'get ' : 
+    EngineCore.Graphics.GraphicController* GraphicControl 'get set' : 
+    VoxelEngine.RendererBase RenderBase 'set' : 
+    Boolean WireFrame 'get set' : 
+    Int64 FrameCount 'get ' : 
+    EngineCore.Window.GLFWWindow* Window 'get ' : 
+    VoxelEngine.UI.UIContext UIBuilder 'get ' : 
+    EngineCore.Input.InputSystem* Input 'get ' : 
+    VoxelEngine.Controllers.VoxFileControl VoxFileControl 'get ' : 
+    VoxelEngine.Controllers.AudioControl AudioControl 'get ' : 
+    VoxelEngine.Controllers.ColorPaletteControl ColorPaletteControl 'get ' : 
+    VoxelEngine.Controllers.ModelControl ModelControl 'get ' : 
+    VoxelEngine.Controllers.VoxelObjectControl ObjectControl 'get ' : 
+    VoxelEngine.Controllers.LightControl LightControl 'get ' : 
+    VoxelEngine.Controllers.AnimationControl AnimationControl 'get ' : 
+    VoxelEngine.Controllers.WorldControl WorldControl 'get ' : 
+    VoxelEngine.Controllers.CameraControl CameraControl 'get ' : 
+  Methods:
+    get_CameraControl(): PrivateScope, Public, HideBySig, SpecialName
+    get_WorldControl(): PrivateScope, Public, HideBySig, SpecialName
+    get_AnimationControl(): PrivateScope, Public, HideBySig, SpecialName
+    get_LightControl(): PrivateScope, Public, HideBySig, SpecialName
+    get_ObjectControl(): PrivateScope, Public, HideBySig, SpecialName
+    get_ModelControl(): PrivateScope, Public, HideBySig, SpecialName
+    get_ColorPaletteControl(): PrivateScope, Public, HideBySig, SpecialName
+    get_AudioControl(): PrivateScope, Public, HideBySig, SpecialName
+    get_VoxFileControl(): PrivateScope, Public, HideBySig, SpecialName
+    get_Input(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_UIBuilder(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_Window(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_FrameCount(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_WireFrame(): PrivateScope, Public, HideBySig, SpecialName
+    set_WireFrame(Boolean(HasFieldMarshal)): PrivateScope, Public, HideBySig, SpecialName
+    set_RenderBase(RendererBase): PrivateScope, Public, HideBySig, SpecialName
+    get_GraphicControl(): PrivateScope, Public, HideBySig, SpecialName
+    set_GraphicControl(GraphicController*): PrivateScope, Public, HideBySig, SpecialName
+    get_WrapInput(): PrivateScope, Public, HideBySig, SpecialName
+    get_Resolution(): PrivateScope, Public, HideBySig, SpecialName
+    get_Timer(): PrivateScope, Public, HideBySig, SpecialName
+    get_CheckSystemIsEnabled(): PrivateScope, Public, HideBySig, SpecialName
+    set_CheckSystemIsEnabled(Boolean(HasFieldMarshal)): PrivateScope, Public, HideBySig, SpecialName
+    Run(): PrivateScope, Public, HideBySig
+Class VoxelEngine.DefaultRenderer: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :VoxelEngine.RendererBase
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    VoxelEngine.IRenderer
+    System.IDisposable
+  Methods:
+    EnableShadows(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    DisableShadows(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    EnableSkyBox(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    DisableSkyBox(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    EnableBloom(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    DisableBloom(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    EnableToneMapping(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    DisableToneMapping(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    EnableIsFxaa(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    DisableIsFxaa(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    EnableRenderingWithColorPalette(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    DisableRenderingWithColorPalette(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    EnableColorTransparency(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    DisableColorTransparency(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    Dispose(): PrivateScope, Public, Final, Virtual, HideBySig
+Struct VoxelEngine.UI.UIMouseButton: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    VoxelEngine.UI.UIMouseButton Left = 0 : Public, Static, Literal, HasDefault
+    VoxelEngine.UI.UIMouseButton Right = 1 : Public, Static, Literal, HasDefault
+    VoxelEngine.UI.UIMouseButton Middle = 2 : Public, Static, Literal, HasDefault
+Struct VoxelEngine.UI.UIComboFlags: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    VoxelEngine.UI.UIComboFlags None = 0 : Public, Static, Literal, HasDefault
+    VoxelEngine.UI.UIComboFlags PopupAlignLeft = 1 : Public, Static, Literal, HasDefault
+    VoxelEngine.UI.UIComboFlags HeightSmall = 2 : Public, Static, Literal, HasDefault
+    VoxelEngine.UI.UIComboFlags HeighRegular = 4 : Public, Static, Literal, HasDefault
+    VoxelEngine.UI.UIComboFlags HeightLarge = 8 : Public, Static, Literal, HasDefault
+    VoxelEngine.UI.UIComboFlags HeightLargest = 16 : Public, Static, Literal, HasDefault
+    VoxelEngine.UI.UIComboFlags NoArrowButton = 32 : Public, Static, Literal, HasDefault
+    VoxelEngine.UI.UIComboFlags NoPreview = 64 : Public, Static, Literal, HasDefault
+    VoxelEngine.UI.UIComboFlags HeightMask = 30 : Public, Static, Literal, HasDefault
+Struct VoxelEngine.UI.UICond: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    VoxelEngine.UI.UICond Always = 1 : Public, Static, Literal, HasDefault
+    VoxelEngine.UI.UICond Once = 2 : Public, Static, Literal, HasDefault
+    VoxelEngine.UI.UICond FirstUseEver = 4 : Public, Static, Literal, HasDefault
+    VoxelEngine.UI.UICond Appearing = 8 : Public, Static, Literal, HasDefault
+Struct VoxelEngine.UI.UIFocusedFlags: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    VoxelEngine.UI.UIFocusedFlags None = 0 : Public, Static, Literal, HasDefault
+    VoxelEngine.UI.UIFocusedFlags ChildWindows = 1 : Public, Static, Literal, HasDefault
+    VoxelEngine.UI.UIFocusedFlags RootWindow = 2 : Public, Static, Literal, HasDefault
+    VoxelEngine.UI.UIFocusedFlags AnyWindow = 4 : Public, Static, Literal, HasDefault
+    VoxelEngine.UI.UIFocusedFlags RootAndChildWindow = 3 : Public, Static, Literal, HasDefault
+Struct VoxelEngine.UI.UIHoveredFlags: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    VoxelEngine.UI.UIHoveredFlags None = 0 : Public, Static, Literal, HasDefault
+    VoxelEngine.UI.UIHoveredFlags ChildWindows = 1 : Public, Static, Literal, HasDefault
+    VoxelEngine.UI.UIHoveredFlags RootWindow = 2 : Public, Static, Literal, HasDefault
+    VoxelEngine.UI.UIHoveredFlags AnyWindow = 4 : Public, Static, Literal, HasDefault
+    VoxelEngine.UI.UIHoveredFlags AllowWhenBlockedByPopup = 8 : Public, Static, Literal, HasDefault
+    VoxelEngine.UI.UIHoveredFlags AllowWhenBlockByActiveItem = 32 : Public, Static, Literal, HasDefault
+    VoxelEngine.UI.UIHoveredFlags AllowWhenOverlapped = 64 : Public, Static, Literal, HasDefault
+    VoxelEngine.UI.UIHoveredFlags AllowWhenDisabled = 128 : Public, Static, Literal, HasDefault
+    VoxelEngine.UI.UIHoveredFlags RectOnly = 104 : Public, Static, Literal, HasDefault
+    VoxelEngine.UI.UIHoveredFlags RootAndChildWindows = 3 : Public, Static, Literal, HasDefault
+Struct VoxelEngine.UI.UIInputTextFlags: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    VoxelEngine.UI.UIInputTextFlags None = 0 : Public, Static, Literal, HasDefault
+    VoxelEngine.UI.UIInputTextFlags CharsDecimal = 1 : Public, Static, Literal, HasDefault
+    VoxelEngine.UI.UIInputTextFlags CharsHexadecimal = 2 : Public, Static, Literal, HasDefault
+    VoxelEngine.UI.UIInputTextFlags CharsUppercase = 4 : Public, Static, Literal, HasDefault
+    VoxelEngine.UI.UIInputTextFlags CharsNoBlank = 8 : Public, Static, Literal, HasDefault
+    VoxelEngine.UI.UIInputTextFlags AutoSelectAll = 16 : Public, Static, Literal, HasDefault
+    VoxelEngine.UI.UIInputTextFlags EnterReturnsTrue = 32 : Public, Static, Literal, HasDefault
+    VoxelEngine.UI.UIInputTextFlags CallbackCompletion = 64 : Public, Static, Literal, HasDefault
+    VoxelEngine.UI.UIInputTextFlags CallbackHistory = 128 : Public, Static, Literal, HasDefault
+    VoxelEngine.UI.UIInputTextFlags CallbackAlways = 256 : Public, Static, Literal, HasDefault
+    VoxelEngine.UI.UIInputTextFlags CallbackCharFiler = 512 : Public, Static, Literal, HasDefault
+    VoxelEngine.UI.UIInputTextFlags AllowTabInput = 1024 : Public, Static, Literal, HasDefault
+    VoxelEngine.UI.UIInputTextFlags CtrlEnterForNewLine = 2048 : Public, Static, Literal, HasDefault
+    VoxelEngine.UI.UIInputTextFlags NoHorizontalScroll = 4096 : Public, Static, Literal, HasDefault
+    VoxelEngine.UI.UIInputTextFlags AlwaysInsertMode = 8192 : Public, Static, Literal, HasDefault
+    VoxelEngine.UI.UIInputTextFlags ReadOnly = 16384 : Public, Static, Literal, HasDefault
+    VoxelEngine.UI.UIInputTextFlags Password = 32768 : Public, Static, Literal, HasDefault
+    VoxelEngine.UI.UIInputTextFlags NoUndoRedo = 65536 : Public, Static, Literal, HasDefault
+    VoxelEngine.UI.UIInputTextFlags CharsScientific = 131072 : Public, Static, Literal, HasDefault
+    VoxelEngine.UI.UIInputTextFlags CallbackResize = 262144 : Public, Static, Literal, HasDefault
+Struct VoxelEngine.UI.UISelectableFlags: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    VoxelEngine.UI.UISelectableFlags None = 0 : Public, Static, Literal, HasDefault
+    VoxelEngine.UI.UISelectableFlags DontClosePopups = 1 : Public, Static, Literal, HasDefault
+    VoxelEngine.UI.UISelectableFlags SpanAllColumns = 2 : Public, Static, Literal, HasDefault
+    VoxelEngine.UI.UISelectableFlags AllowDoubleClick = 4 : Public, Static, Literal, HasDefault
+    VoxelEngine.UI.UISelectableFlags Disabled = 8 : Public, Static, Literal, HasDefault
+Struct VoxelEngine.UI.Palette.Color4: AutoLayout, AnsiClass, Class, Public, SequentialLayout, Sealed, BeforeFieldInit
+  :System.ValueType
+    Void .ctor(Single, Single, Single, Single): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    Single R : Public
+    Single G : Public
+    Single B : Public
+    Single A : Public
+Class VoxelEngine.UI.TextureLoader: AutoLayout, AnsiClass, Class, Public, Abstract, Sealed, BeforeFieldInit
+  Methods:
+    LoadTexture(UIContext, String): PrivateScope, Public, Static, HideBySig
+Class VoxelEngine.UI.WidgetComboExtension: AutoLayout, AnsiClass, Class, Public, Abstract, Sealed, BeforeFieldInit
+  Methods:
+    BeginCombo(UIContext, Boolean(HasFieldMarshal), String, String, UIComboFlags): PrivateScope, Public, Static, HideBySig
+    EndCombo(UIContext): PrivateScope, Public, Static, HideBySig
+    Combo(UIContext, Boolean(HasFieldMarshal), String, String[], Int32): PrivateScope, Public, Static, HideBySig
+Class VoxelEngine.UI.WidgetContainerItemExtension: AutoLayout, AnsiClass, Class, Public, Abstract, Sealed, BeforeFieldInit
+  Methods:
+    MenuItem(UIContext, Boolean(HasFieldMarshal), String, String): PrivateScope, Public, Static, HideBySig
+    MenuItem(UIContext, Boolean(HasFieldMarshal), String): PrivateScope, Public, Static, HideBySig
+    Selectable(UIContext, Boolean(HasFieldMarshal), String, UISelectableFlags): PrivateScope, Public, Static, HideBySig
+    Selectable(UIContext, Boolean(HasFieldMarshal), String, UISelectableFlags, ValueType Vector2 IsBoxed): PrivateScope, Public, Static, HideBySig
+Class VoxelEngine.UI.WidgetCursorExtension: AutoLayout, AnsiClass, Class, Public, Abstract, Sealed, BeforeFieldInit
+  Methods:
+    GetCursorPos(UIContext, Boolean(HasFieldMarshal), ValueType&(Out)): PrivateScope, Public, Static, HideBySig
+    SetCursorPos(UIContext, Boolean(HasFieldMarshal), ValueType Vector2 IsBoxed): PrivateScope, Public, Static, HideBySig
+    GetCursorStartPos(UIContext, Boolean(HasFieldMarshal), ValueType&(Out)): PrivateScope, Public, Static, HideBySig
+    GetCursorScreenPos(UIContext, Boolean(HasFieldMarshal), ValueType&(Out)): PrivateScope, Public, Static, HideBySig
+    SetCursorScreenPos(UIContext, Boolean(HasFieldMarshal), ValueType Vector2 IsBoxed): PrivateScope, Public, Static, HideBySig
+    AlignTextToFramePadding(UIContext, Boolean(HasFieldMarshal)): PrivateScope, Public, Static, HideBySig
+    GetTextLineHeight(UIContext, Boolean(HasFieldMarshal), Single&(Out)): PrivateScope, Public, Static, HideBySig
+    GetTextLineHeightWithSpacing(UIContext, Boolean(HasFieldMarshal), Single&(Out)): PrivateScope, Public, Static, HideBySig
+    GetFrameHeight(UIContext, Boolean(HasFieldMarshal), Single&(Out)): PrivateScope, Public, Static, HideBySig
+    GetFrameHeightWithSpacing(UIContext, Boolean(HasFieldMarshal), Single&(Out)): PrivateScope, Public, Static, HideBySig
+Class VoxelEngine.UI.WidgetDragExtension: AutoLayout, AnsiClass, Class, Public, Abstract, Sealed, BeforeFieldInit
+  Methods:
+    DragFloat(UIContext, Boolean(HasFieldMarshal), String, Single, Single, Single): PrivateScope, Public, Static, HideBySig
+    DragFloat(UIContext, Boolean(HasFieldMarshal), String, Single, Single, Single, String): PrivateScope, Public, Static, HideBySig
+    DragFloat(UIContext, Boolean(HasFieldMarshal), String, Single, Single, Single, String, Single): PrivateScope, Public, Static, HideBySig
+    DragFloat2(UIContext, Boolean(HasFieldMarshal), String, Single, Single, Single): PrivateScope, Public, Static, HideBySig
+    DragFloat2(UIContext, Boolean(HasFieldMarshal), String, Single, Single, Single, String): PrivateScope, Public, Static, HideBySig
+    DragFloat2(UIContext, Boolean(HasFieldMarshal), String, Single, Single, Single, String, Single): PrivateScope, Public, Static, HideBySig
+    DragFloat3(UIContext, Boolean(HasFieldMarshal), String, Single, Single, Single): PrivateScope, Public, Static, HideBySig
+    DragFloat3(UIContext, Boolean(HasFieldMarshal), String, Single, Single, Single, String): PrivateScope, Public, Static, HideBySig
+    DragFloat3(UIContext, Boolean(HasFieldMarshal), String, Single, Single, Single, String, Single): PrivateScope, Public, Static, HideBySig
+    DragFloat4(UIContext, Boolean(HasFieldMarshal), String, Single, Single, Single): PrivateScope, Public, Static, HideBySig
+    DragFloat4(UIContext, Boolean(HasFieldMarshal), String, Single, Single, Single, String): PrivateScope, Public, Static, HideBySig
+    DragFloat4(UIContext, Boolean(HasFieldMarshal), String, Single, Single, Single, String, Single): PrivateScope, Public, Static, HideBySig
+    DragInt(UIContext, Boolean(HasFieldMarshal), String, Single, Int32, Int32): PrivateScope, Public, Static, HideBySig
+    DragInt(UIContext, Boolean(HasFieldMarshal), String, Single, Int32, Int32, String): PrivateScope, Public, Static, HideBySig
+    DragInt2(UIContext, Boolean(HasFieldMarshal), String, Single, Int32, Int32): PrivateScope, Public, Static, HideBySig
+    DragInt2(UIContext, Boolean(HasFieldMarshal), String, Single, Int32, Int32, String): PrivateScope, Public, Static, HideBySig
+    DragInt3(UIContext, Boolean(HasFieldMarshal), String, Single, Int32, Int32): PrivateScope, Public, Static, HideBySig
+    DragInt3(UIContext, Boolean(HasFieldMarshal), String, Single, Int32, Int32, String): PrivateScope, Public, Static, HideBySig
+    DragInt4(UIContext, Boolean(HasFieldMarshal), String, Single, Int32, Int32): PrivateScope, Public, Static, HideBySig
+    DragInt4(UIContext, Boolean(HasFieldMarshal), String, Single, Int32, Int32, String): PrivateScope, Public, Static, HideBySig
+Class VoxelEngine.UI.WidgetItemUtilitiesExtension: AutoLayout, AnsiClass, Class, Public, Abstract, Sealed, BeforeFieldInit
+  Methods:
+    IsItemHovered(UIContext, Boolean(HasFieldMarshal), UIHoveredFlags, Boolean&(Out)): PrivateScope, Public, Static, HideBySig
+    IsItemActive(UIContext, Boolean(HasFieldMarshal), Boolean&(Out)): PrivateScope, Public, Static, HideBySig
+    IsItemFocused(UIContext, Boolean(HasFieldMarshal), Boolean&(Out)): PrivateScope, Public, Static, HideBySig
+    IsItemClicked(UIContext, Boolean(HasFieldMarshal), UIMouseButton, Boolean&(Out)): PrivateScope, Public, Static, HideBySig
+    IsItemClicked(UIContext, Boolean(HasFieldMarshal), Boolean&(Out)): PrivateScope, Public, Static, HideBySig
+    IsItemVisible(UIContext, Boolean(HasFieldMarshal), Boolean&(Out)): PrivateScope, Public, Static, HideBySig
+    IsItemEdited(UIContext, Boolean(HasFieldMarshal), Boolean&(Out)): PrivateScope, Public, Static, HideBySig
+    IsItemActivated(UIContext, Boolean(HasFieldMarshal), Boolean&(Out)): PrivateScope, Public, Static, HideBySig
+    IsItemDeactivated(UIContext, Boolean(HasFieldMarshal), Boolean&(Out)): PrivateScope, Public, Static, HideBySig
+    IsItemDeactivatedAfterEdit(UIContext, Boolean(HasFieldMarshal), Boolean&(Out)): PrivateScope, Public, Static, HideBySig
+    IsAnyItemHovered(UIContext, Boolean(HasFieldMarshal), Boolean&(Out)): PrivateScope, Public, Static, HideBySig
+    IsAnyItemActive(UIContext, Boolean(HasFieldMarshal), Boolean&(Out)): PrivateScope, Public, Static, HideBySig
+    IsAnyItemFocused(UIContext, Boolean(HasFieldMarshal), Boolean&(Out)): PrivateScope, Public, Static, HideBySig
+    GetItemRectMin(UIContext, Boolean(HasFieldMarshal), ValueType&(Out)): PrivateScope, Public, Static, HideBySig
+    GetItemRectMax(UIContext, Boolean(HasFieldMarshal), ValueType&(Out)): PrivateScope, Public, Static, HideBySig
+    GetItemRectSize(UIContext, Boolean(HasFieldMarshal), ValueType&(Out)): PrivateScope, Public, Static, HideBySig
+    SetItemAllowOverlap(UIContext, Boolean(HasFieldMarshal)): PrivateScope, Public, Static, HideBySig
+    SetKeyboardFocusHere(UIContext, Boolean(HasFieldMarshal)): PrivateScope, Public, Static, HideBySig
+Class VoxelEngine.UI.WidgetLayoutExtension: AutoLayout, AnsiClass, Class, Public, Abstract, Sealed, BeforeFieldInit
+  Methods:
+    Seperator(UIContext, Boolean(HasFieldMarshal)): PrivateScope, Public, Static, HideBySig
+    SameLine(UIContext, Boolean(HasFieldMarshal), Single, Single): PrivateScope, Public, Static, HideBySig
+    SameLine(UIContext, Boolean(HasFieldMarshal), Single): PrivateScope, Public, Static, HideBySig
+    SameLine(UIContext, Boolean(HasFieldMarshal)): PrivateScope, Public, Static, HideBySig
+    NewLine(UIContext, Boolean(HasFieldMarshal)): PrivateScope, Public, Static, HideBySig
+    Spacing(UIContext, Boolean(HasFieldMarshal)): PrivateScope, Public, Static, HideBySig
+    Dummy(UIContext, Boolean(HasFieldMarshal), ValueType Vector2 IsBoxed): PrivateScope, Public, Static, HideBySig
+    Indent(UIContext, Boolean(HasFieldMarshal), Single): PrivateScope, Public, Static, HideBySig
+    Indent(UIContext, Boolean(HasFieldMarshal)): PrivateScope, Public, Static, HideBySig
+    Unindent(UIContext, Boolean(HasFieldMarshal), Single): PrivateScope, Public, Static, HideBySig
+    Unindent(UIContext, Boolean(HasFieldMarshal)): PrivateScope, Public, Static, HideBySig
+    BeginGroup(UIContext, Boolean(HasFieldMarshal)): PrivateScope, Public, Static, HideBySig
+    EndGroup(UIContext, Boolean(HasFieldMarshal)): PrivateScope, Public, Static, HideBySig
+Class VoxelEngine.UI.WidgetMenusExtension: AutoLayout, AnsiClass, Class, Public, Abstract, Sealed, BeforeFieldInit
+  Methods:
+    BeginMainMenuBar(UIContext): PrivateScope, Public, Static, HideBySig
+    EndMainMenuBar(UIContext): PrivateScope, Public, Static, HideBySig
+    BeginMenuBar(UIContext): PrivateScope, Public, Static, HideBySig
+    EndMenuBar(UIContext): PrivateScope, Public, Static, HideBySig
+    BeginMenu(UIContext, Boolean(HasFieldMarshal), String, Boolean(HasFieldMarshal)): PrivateScope, Public, Static, HideBySig
+    BeginMenu(UIContext, Boolean(HasFieldMarshal), String): PrivateScope, Public, Static, HideBySig
+    EndMenu(UIContext): PrivateScope, Public, Static, HideBySig
+Class VoxelEngine.UI.WidgetWindowExtension: AutoLayout, AnsiClass, Class, Public, Abstract, Sealed, BeforeFieldInit
+  Methods:
+    Begin(UIContext, String, UIWindowFlags): PrivateScope, Public, Static, HideBySig
+    End(UIContext): PrivateScope, Public, Static, HideBySig
+Class VoxelEngine.UI.WidgetParameterStacksExtension: AutoLayout, AnsiClass, Class, Public, Abstract, Sealed, BeforeFieldInit
+  Methods:
+    PushItemWidth(UIContext, Boolean(HasFieldMarshal), Single): PrivateScope, Public, Static, HideBySig
+    PopItemWidth(UIContext, Boolean(HasFieldMarshal)): PrivateScope, Public, Static, HideBySig
+    SetNextItemWidth(UIContext, Boolean(HasFieldMarshal), Single): PrivateScope, Public, Static, HideBySig
+    CalcItemWidth(UIContext, Boolean(HasFieldMarshal)): PrivateScope, Public, Static, HideBySig
+    PushTextWrapPos(UIContext, Boolean(HasFieldMarshal)): PrivateScope, Public, Static, HideBySig
+    PushTextWrapPos(UIContext, Boolean(HasFieldMarshal), Single): PrivateScope, Public, Static, HideBySig
+    PopTextWrapPos(UIContext, Boolean(HasFieldMarshal)): PrivateScope, Public, Static, HideBySig
+    PushAllowKeyboardFocus(UIContext, Boolean(HasFieldMarshal), Boolean(HasFieldMarshal)): PrivateScope, Public, Static, HideBySig
+    PopAllowKeyboardFocus(UIContext, Boolean(HasFieldMarshal)): PrivateScope, Public, Static, HideBySig
+    PushButtonRepeat(UIContext, Boolean(HasFieldMarshal), Boolean(HasFieldMarshal)): PrivateScope, Public, Static, HideBySig
+    PopButtonRepeat(UIContext, Boolean(HasFieldMarshal)): PrivateScope, Public, Static, HideBySig
+Class VoxelEngine.UI.WidgetPopupExtension: AutoLayout, AnsiClass, Class, Public, Abstract, Sealed, BeforeFieldInit
+  Methods:
+    OpenPopup(UIContext, String): PrivateScope, Public, Static, HideBySig
+    BeginPopup(UIContext, String, UIWindowFlags): PrivateScope, Public, Static, HideBySig
+    BeginPopupContextItem(UIContext, String, UIMouseButton): PrivateScope, Public, Static, HideBySig
+    BeginPopupContextWindow(UIContext, String, UIMouseButton, Boolean(HasFieldMarshal)): PrivateScope, Public, Static, HideBySig
+    BeginPopupContextVoid(UIContext, String, UIMouseButton): PrivateScope, Public, Static, HideBySig
+    BeginPopupModal(UIContext, String, UIWindowFlags): PrivateScope, Public, Static, HideBySig
+    EndPopup(UIContext): PrivateScope, Public, Static, HideBySig
+    OpenPopupOnItemClick(UIContext, String, UIMouseButton): PrivateScope, Public, Static, HideBySig
+    IsPopupOpen(UIContext, String): PrivateScope, Public, Static, HideBySig
+    CloseCurrentPopup(UIContext): PrivateScope, Public, Static, HideBySig
+Class VoxelEngine.UI.WidgetSliderExtension: AutoLayout, AnsiClass, Class, Public, Abstract, Sealed, BeforeFieldInit
+  Methods:
+    SliderFloat(UIContext, Boolean(HasFieldMarshal), String, Single, Single): PrivateScope, Public, Static, HideBySig
+    SliderFloat(UIContext, Boolean(HasFieldMarshal), String, Single, Single, String): PrivateScope, Public, Static, HideBySig
+    SliderFloat(UIContext, Boolean(HasFieldMarshal), String, Single, Single, String, Single): PrivateScope, Public, Static, HideBySig
+    SliderFloat2(UIContext, Boolean(HasFieldMarshal), String, Single, Single): PrivateScope, Public, Static, HideBySig
+    SliderFloat2(UIContext, Boolean(HasFieldMarshal), String, Single, Single, String): PrivateScope, Public, Static, HideBySig
+    SliderFloat2(UIContext, Boolean(HasFieldMarshal), String, Single, Single, String, Single): PrivateScope, Public, Static, HideBySig
+    SliderFloat3(UIContext, Boolean(HasFieldMarshal), String, Single, Single): PrivateScope, Public, Static, HideBySig
+    SliderFloat3(UIContext, Boolean(HasFieldMarshal), String, Single, Single, String): PrivateScope, Public, Static, HideBySig
+    SliderFloat3(UIContext, Boolean(HasFieldMarshal), String, Single, Single, String, Single): PrivateScope, Public, Static, HideBySig
+    SliderFloat4(UIContext, Boolean(HasFieldMarshal), String, Single, Single): PrivateScope, Public, Static, HideBySig
+    SliderFloat4(UIContext, Boolean(HasFieldMarshal), String, Single, Single, String): PrivateScope, Public, Static, HideBySig
+    SliderFloat4(UIContext, Boolean(HasFieldMarshal), String, Single, Single, String, Single): PrivateScope, Public, Static, HideBySig
+    SliderInt(UIContext, Boolean(HasFieldMarshal), String, Int32, Int32): PrivateScope, Public, Static, HideBySig
+    SliderInt(UIContext, Boolean(HasFieldMarshal), String, Int32, Int32, String): PrivateScope, Public, Static, HideBySig
+    SliderInt2(UIContext, Boolean(HasFieldMarshal), String, Int32, Int32): PrivateScope, Public, Static, HideBySig
+    SliderInt2(UIContext, Boolean(HasFieldMarshal), String, Int32, Int32, String): PrivateScope, Public, Static, HideBySig
+    SliderInt3(UIContext, Boolean(HasFieldMarshal), String, Int32, Int32): PrivateScope, Public, Static, HideBySig
+    SliderInt3(UIContext, Boolean(HasFieldMarshal), String, Int32, Int32, String): PrivateScope, Public, Static, HideBySig
+    SliderInt4(UIContext, Boolean(HasFieldMarshal), String, Int32, Int32): PrivateScope, Public, Static, HideBySig
+    SliderInt4(UIContext, Boolean(HasFieldMarshal), String, Int32, Int32, String): PrivateScope, Public, Static, HideBySig
+    VSliderFloat(UIContext, Boolean(HasFieldMarshal), String, ValueType Vector2 IsBoxed, Single, Single): PrivateScope, Public, Static, HideBySig
+    VSliderFloat(UIContext, Boolean(HasFieldMarshal), String, ValueType Vector2 IsBoxed, Single, Single, String): PrivateScope, Public, Static, HideBySig
+    VSliderFloat(UIContext, Boolean(HasFieldMarshal), String, ValueType Vector2 IsBoxed, Single, Single, String, Single): PrivateScope, Public, Static, HideBySig
+    VSliderInt(UIContext, Boolean(HasFieldMarshal), String, ValueType Vector2 IsBoxed, Int32, Int32): PrivateScope, Public, Static, HideBySig
+    VSliderInt(UIContext, Boolean(HasFieldMarshal), String, ValueType Vector2 IsBoxed, Int32, Int32, String): PrivateScope, Public, Static, HideBySig
+Class VoxelEngine.UI.WidgetTextExtension: AutoLayout, AnsiClass, Class, Public, Abstract, Sealed, BeforeFieldInit
+  Methods:
+    Text(UIContext, Boolean(HasFieldMarshal), String): PrivateScope, Public, Static, HideBySig
+    TextColored(UIContext, Boolean(HasFieldMarshal), String, ValueType Color4 IsBoxed): PrivateScope, Public, Static, HideBySig
+    TextDisabled(UIContext, Boolean(HasFieldMarshal), String): PrivateScope, Public, Static, HideBySig
+    TextWrapped(UIContext, Boolean(HasFieldMarshal), String): PrivateScope, Public, Static, HideBySig
+    LabelText(UIContext, Boolean(HasFieldMarshal), String, String): PrivateScope, Public, Static, HideBySig
+    BulletText(UIContext, Boolean(HasFieldMarshal), String): PrivateScope, Public, Static, HideBySig
+Class VoxelEngine.UI.WidgetTooltipExtension: AutoLayout, AnsiClass, Class, Public, Abstract, Sealed, BeforeFieldInit
+  Methods:
+    BeginTooltip(UIContext, Boolean(HasFieldMarshal)): PrivateScope, Public, Static, HideBySig
+    EndTooltip(UIContext, Boolean(HasFieldMarshal)): PrivateScope, Public, Static, HideBySig
+    SetTooltip(UIContext, Boolean(HasFieldMarshal), String): PrivateScope, Public, Static, HideBySig
+Class VoxelEngine.UI.WidgetTreeNodeExtension: AutoLayout, AnsiClass, Class, Public, Abstract, Sealed, BeforeFieldInit
+  Methods:
+    TreeNode(UIContext, Boolean(HasFieldMarshal), String): PrivateScope, Public, Static, HideBySig
+    TreeNodeCustom(UIContext, Boolean(HasFieldMarshal), String, String): PrivateScope, Public, Static, HideBySig
+    TreeNodeFlags(UIContext, Boolean(HasFieldMarshal), String, UITreeNodeFlags): PrivateScope, Public, Static, HideBySig
+    TreeNodeFlagsCustom(UIContext, Boolean(HasFieldMarshal), String, UITreeNodeFlags, String): PrivateScope, Public, Static, HideBySig
+    TreeNodePop(UIContext, String): PrivateScope, Public, Static, HideBySig
+    GetTreeNodeToLabelSpacing(UIContext, Single&(Out)): PrivateScope, Public, Static, HideBySig
+    CollapsingHeader(UIContext, Boolean(HasFieldMarshal), String, UITreeNodeFlags): PrivateScope, Public, Static, HideBySig
+    CollapsingHeaderClose(UIContext, Boolean(HasFieldMarshal), String, UITreeNodeFlags): PrivateScope, Public, Static, HideBySig
+Struct VoxelEngine.UI.UITreeNodeFlags: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    VoxelEngine.UI.UITreeNodeFlags None = 0 : Public, Static, Literal, HasDefault
+    VoxelEngine.UI.UITreeNodeFlags Selected = 1 : Public, Static, Literal, HasDefault
+    VoxelEngine.UI.UITreeNodeFlags Framed = 2 : Public, Static, Literal, HasDefault
+    VoxelEngine.UI.UITreeNodeFlags AlloItemOverlap = 4 : Public, Static, Literal, HasDefault
+    VoxelEngine.UI.UITreeNodeFlags NoTreePushOnOpen = 8 : Public, Static, Literal, HasDefault
+    VoxelEngine.UI.UITreeNodeFlags NoAutoOpenOnLog = 16 : Public, Static, Literal, HasDefault
+    VoxelEngine.UI.UITreeNodeFlags DefaultOpen = 32 : Public, Static, Literal, HasDefault
+    VoxelEngine.UI.UITreeNodeFlags OpenDoubleKlick = 64 : Public, Static, Literal, HasDefault
+    VoxelEngine.UI.UITreeNodeFlags OpenOnArrow = 128 : Public, Static, Literal, HasDefault
+    VoxelEngine.UI.UITreeNodeFlags Leaf = 256 : Public, Static, Literal, HasDefault
+    VoxelEngine.UI.UITreeNodeFlags Bullet = 512 : Public, Static, Literal, HasDefault
+    VoxelEngine.UI.UITreeNodeFlags FramePadding = 1024 : Public, Static, Literal, HasDefault
+    VoxelEngine.UI.UITreeNodeFlags NavLeftJumpsBackHere = 8192 : Public, Static, Literal, HasDefault
+    VoxelEngine.UI.UITreeNodeFlags ImGuiTreeNodeFlags_CollapsingHeader = 8193 : Public, Static, Literal, HasDefault
+Class VoxelEngine.UI.WidgetValueInputExtension: AutoLayout, AnsiClass, Class, Public, Abstract, Sealed, BeforeFieldInit
+  Methods:
+    InputText(UIContext, Boolean(HasFieldMarshal), String): PrivateScope, Public, Static, HideBySig
+    InputText(UIContext, Boolean(HasFieldMarshal), String, UIInputTextFlags): PrivateScope, Public, Static, HideBySig
+    InputTextMultiline(UIContext, Boolean(HasFieldMarshal), String): PrivateScope, Public, Static, HideBySig
+    InputTextMultiline(UIContext, Boolean(HasFieldMarshal), String, ValueType Vector2 IsBoxed): PrivateScope, Public, Static, HideBySig
+    InputTextMultiline(UIContext, Boolean(HasFieldMarshal), String, ValueType Vector2 IsBoxed, UIInputTextFlags): PrivateScope, Public, Static, HideBySig
+    InputTextWithHint(UIContext, Boolean(HasFieldMarshal), String, String): PrivateScope, Public, Static, HideBySig
+    InputTextWithHint(UIContext, Boolean(HasFieldMarshal), String, String, UIInputTextFlags): PrivateScope, Public, Static, HideBySig
+    InputFloat(UIContext, Boolean(HasFieldMarshal), String): PrivateScope, Public, Static, HideBySig
+    InputFloat(UIContext, Boolean(HasFieldMarshal), String, String): PrivateScope, Public, Static, HideBySig
+    InputFloat(UIContext, Boolean(HasFieldMarshal), String, String, UIInputTextFlags): PrivateScope, Public, Static, HideBySig
+    InputFloat2(UIContext, Boolean(HasFieldMarshal), String): PrivateScope, Public, Static, HideBySig
+    InputFloat2(UIContext, Boolean(HasFieldMarshal), String, String): PrivateScope, Public, Static, HideBySig
+    InputFloat2(UIContext, Boolean(HasFieldMarshal), String, String, UIInputTextFlags): PrivateScope, Public, Static, HideBySig
+    InputFloat3(UIContext, Boolean(HasFieldMarshal), String): PrivateScope, Public, Static, HideBySig
+    InputFloat3(UIContext, Boolean(HasFieldMarshal), String, String): PrivateScope, Public, Static, HideBySig
+    InputFloat3(UIContext, Boolean(HasFieldMarshal), String, String, UIInputTextFlags): PrivateScope, Public, Static, HideBySig
+    InputFloat4(UIContext, Boolean(HasFieldMarshal), String): PrivateScope, Public, Static, HideBySig
+    InputFloat4(UIContext, Boolean(HasFieldMarshal), String, String): PrivateScope, Public, Static, HideBySig
+    InputFloat4(UIContext, Boolean(HasFieldMarshal), String, String, UIInputTextFlags): PrivateScope, Public, Static, HideBySig
+    InputInt(UIContext, Boolean(HasFieldMarshal), String): PrivateScope, Public, Static, HideBySig
+    InputInt(UIContext, Boolean(HasFieldMarshal), String, UIInputTextFlags): PrivateScope, Public, Static, HideBySig
+    InputInt2(UIContext, Boolean(HasFieldMarshal), String): PrivateScope, Public, Static, HideBySig
+    InputInt2(UIContext, Boolean(HasFieldMarshal), String, UIInputTextFlags): PrivateScope, Public, Static, HideBySig
+    InputInt3(UIContext, Boolean(HasFieldMarshal), String): PrivateScope, Public, Static, HideBySig
+    InputInt3(UIContext, Boolean(HasFieldMarshal), String, UIInputTextFlags): PrivateScope, Public, Static, HideBySig
+    InputInt4(UIContext, Boolean(HasFieldMarshal), String): PrivateScope, Public, Static, HideBySig
+    InputInt4(UIContext, Boolean(HasFieldMarshal), String, UIInputTextFlags): PrivateScope, Public, Static, HideBySig
+Class VoxelEngine.UI.WidgetManipulateWindowExtension: AutoLayout, AnsiClass, Class, Public, Abstract, Sealed, BeforeFieldInit
+  Methods:
+    SetNextWindowPos(UIContext, ValueType Vector2 IsBoxed, UICond, ValueType Vector2 IsBoxed): PrivateScope, Public, Static, HideBySig
+    SetNextWindowSize(UIContext, ValueType Vector2 IsBoxed, UICond): PrivateScope, Public, Static, HideBySig
+    SetNextWindowSizeConstraints(UIContext, ValueType Vector2 IsBoxed, ValueType Vector2 IsBoxed): PrivateScope, Public, Static, HideBySig
+    SetNextWindowContentSize(UIContext, ValueType Vector2 IsBoxed): PrivateScope, Public, Static, HideBySig
+    SetNextWindowCollapsed(UIContext, Boolean(HasFieldMarshal), UICond): PrivateScope, Public, Static, HideBySig
+    SetNextWindowFocus(UIContext): PrivateScope, Public, Static, HideBySig
+    SetNextWindowBgAlpha(UIContext, Single): PrivateScope, Public, Static, HideBySig
+    SetWindowFontScale(UIContext, Single): PrivateScope, Public, Static, HideBySig
+    SetWindowPos(UIContext, ValueType Vector2 IsBoxed, UICond): PrivateScope, Public, Static, HideBySig
+    SetWindowPos(UIContext, String, ValueType Vector2 IsBoxed, UICond): PrivateScope, Public, Static, HideBySig
+    SetWindowSize(UIContext, ValueType Vector2 IsBoxed, UICond): PrivateScope, Public, Static, HideBySig
+    SetWindowSize(UIContext, String, ValueType Vector2 IsBoxed, UICond): PrivateScope, Public, Static, HideBySig
+    SetWindowCollapsed(UIContext, Boolean(HasFieldMarshal), UICond): PrivateScope, Public, Static, HideBySig
+    SetWindowCollapsed(UIContext, String, Boolean(HasFieldMarshal), UICond): PrivateScope, Public, Static, HideBySig
+    SetWindowFocus(UIContext): PrivateScope, Public, Static, HideBySig
+    SetWindowFocus(UIContext, String): PrivateScope, Public, Static, HideBySig
+Class VoxelEngine.UI.WidgetWindowChildExtension: AutoLayout, AnsiClass, Class, Public, Abstract, Sealed, BeforeFieldInit
+  Methods:
+    BeginChild(UIContext, String, ValueType Vector2 IsBoxed, UIWindowFlags): PrivateScope, Public, Static, HideBySig
+    EndChild(UIContext): PrivateScope, Public, Static, HideBySig
+Class VoxelEngine.UI.WidgetUtilitiesExtension: AutoLayout, AnsiClass, Class, Public, Abstract, Sealed, BeforeFieldInit
+  Methods:
+    IsWindowCollapsed(UIContext, Boolean&): PrivateScope, Public, Static, HideBySig
+    IsWindowFocused(UIContext, UIFocusedFlags, Boolean&): PrivateScope, Public, Static, HideBySig
+    IsWindowHovered(UIContext, UIHoveredFlags, Boolean&): PrivateScope, Public, Static, HideBySig
+    GetWindowPos(UIContext, Vector2&): PrivateScope, Public, Static, HideBySig
+    GetWindowSize(UIContext, Vector2&): PrivateScope, Public, Static, HideBySig
+Struct VoxelEngine.World.Landscape.LandType: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    VoxelEngine.World.Landscape.LandType Plane = 0 : Public, Static, Literal, HasDefault
+    VoxelEngine.World.Landscape.LandType SimilarToMinecraft = 1 : Public, Static, Literal, HasDefault
+Class VoxelEngine.UI.WidgetMainExtension: AutoLayout, AnsiClass, Class, Public, Abstract, Sealed, BeforeFieldInit
+  Methods:
+    Button(UIContext, Boolean(HasFieldMarshal), String): PrivateScope, Public, Static, HideBySig
+    Button(UIContext, Boolean(HasFieldMarshal), String, ValueType Vector2 IsBoxed): PrivateScope, Public, Static, HideBySig
+    SmallButton(UIContext, Boolean(HasFieldMarshal), String): PrivateScope, Public, Static, HideBySig
+    InvisibleButton(UIContext, Boolean(HasFieldMarshal), String, ValueType Vector2 IsBoxed): PrivateScope, Public, Static, HideBySig
+    ArrowButton(UIContext, Boolean(HasFieldMarshal), String, ArrowDirection): PrivateScope, Public, Static, HideBySig
+    Image(UIContext, Boolean(HasFieldMarshal), UInt32, ValueType Vector2 IsBoxed): PrivateScope, Public, Static, HideBySig
+    Image(UIContext, Boolean(HasFieldMarshal), UInt32, ValueType Vector2 IsBoxed, ValueType Color4 IsBoxed, ValueType Color4 IsBoxed): PrivateScope, Public, Static, HideBySig
+    Image(UIContext, Boolean(HasFieldMarshal), UInt32, ValueType Vector2 IsBoxed, ValueType Vector2 IsBoxed, ValueType Vector2 IsBoxed): PrivateScope, Public, Static, HideBySig
+    Image(UIContext, Boolean(HasFieldMarshal), UInt32, ValueType Vector2 IsBoxed, ValueType Vector2 IsBoxed, ValueType Vector2 IsBoxed, ValueType Color4 IsBoxed, ValueType Color4 IsBoxed): PrivateScope, Public, Static, HideBySig
+    ImageButton(UIContext, Boolean(HasFieldMarshal), UInt32, String, ValueType Vector2 IsBoxed): PrivateScope, Public, Static, HideBySig
+    ImageButton(UIContext, Boolean(HasFieldMarshal), UInt32, String, ValueType Vector2 IsBoxed, ValueType Color4 IsBoxed, ValueType Color4 IsBoxed): PrivateScope, Public, Static, HideBySig
+    ImageButton(UIContext, Boolean(HasFieldMarshal), UInt32, String, ValueType Vector2 IsBoxed, ValueType Vector2 IsBoxed, ValueType Vector2 IsBoxed): PrivateScope, Public, Static, HideBySig
+    ImageButton(UIContext, Boolean(HasFieldMarshal), UInt32, String, ValueType Vector2 IsBoxed, ValueType Vector2 IsBoxed, ValueType Vector2 IsBoxed, ValueType Color4 IsBoxed, ValueType Color4 IsBoxed): PrivateScope, Public, Static, HideBySig
+    ImageButton(UIContext, Boolean(HasFieldMarshal), UInt32, String, ValueType Vector2 IsBoxed, Int32): PrivateScope, Public, Static, HideBySig
+    ImageButton(UIContext, Boolean(HasFieldMarshal), UInt32, String, ValueType Vector2 IsBoxed, ValueType Color4 IsBoxed, ValueType Color4 IsBoxed, Int32): PrivateScope, Public, Static, HideBySig
+    ImageButton(UIContext, Boolean(HasFieldMarshal), UInt32, String, ValueType Vector2 IsBoxed, ValueType Vector2 IsBoxed, ValueType Vector2 IsBoxed, Int32): PrivateScope, Public, Static, HideBySig
+    ImageButton(UIContext, Boolean(HasFieldMarshal), UInt32, String, ValueType Vector2 IsBoxed, ValueType Vector2 IsBoxed, ValueType Vector2 IsBoxed, ValueType Color4 IsBoxed, ValueType Color4 IsBoxed, Int32): PrivateScope, Public, Static, HideBySig
+    Checkbox(UIContext, Boolean(HasFieldMarshal), String, Boolean(HasFieldMarshal)): PrivateScope, Public, Static, HideBySig
+    CheckboxFlags(UIContext, Boolean(HasFieldMarshal), String, UInt32): PrivateScope, Public, Static, HideBySig
+    RadioButton(UIContext, Boolean(HasFieldMarshal), String, String, Int32): PrivateScope, Public, Static, HideBySig
+    RadioButton(UIContext, Boolean(HasFieldMarshal), String, Boolean(HasFieldMarshal)): PrivateScope, Public, Static, HideBySig
+    ProgressBar(UIContext, Boolean(HasFieldMarshal), Single): PrivateScope, Public, Static, HideBySig
+    ProgressBar(UIContext, Boolean(HasFieldMarshal), Single, String): PrivateScope, Public, Static, HideBySig
+    ProgressBar(UIContext, Boolean(HasFieldMarshal), Single, ValueType Vector2 IsBoxed): PrivateScope, Public, Static, HideBySig
+    ProgressBar(UIContext, Boolean(HasFieldMarshal), Single, ValueType Vector2 IsBoxed, String): PrivateScope, Public, Static, HideBySig
+    ProgressBarColored(UIContext, Boolean(HasFieldMarshal), Single, Color4, Color4, Color4, ValueType Vector2 IsBoxed, String): PrivateScope, Public, Static, HideBySig
+    ProgressBarColored(UIContext, Boolean(HasFieldMarshal), Single, Color4, Color4, Color4, ValueType Vector2 IsBoxed): PrivateScope, Public, Static, HideBySig
+    ProgressBarColored(UIContext, Boolean(HasFieldMarshal), Single, Color4, Color4, Color4, String): PrivateScope, Public, Static, HideBySig
+    ProgressBarColored(UIContext, Boolean(HasFieldMarshal), Single, Color4, Color4, ValueType Vector2 IsBoxed, String): PrivateScope, Public, Static, HideBySig
+    ProgressBarColored(UIContext, Boolean(HasFieldMarshal), Single, Color4, Color4, ValueType Vector2 IsBoxed): PrivateScope, Public, Static, HideBySig
+    ProgressBarColored(UIContext, Boolean(HasFieldMarshal), Single, Color4, Color4, String): PrivateScope, Public, Static, HideBySig
+    ProgressBarColored(UIContext, Boolean(HasFieldMarshal), Single, Color4, Color4): PrivateScope, Public, Static, HideBySig
+    Bullet(UIContext, Boolean(HasFieldMarshal)): PrivateScope, Public, Static, HideBySig
+Struct VoxelEngine.UI.ArrowDirection: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    VoxelEngine.UI.ArrowDirection None = -1 : Public, Static, Literal, HasDefault
+    VoxelEngine.UI.ArrowDirection Left = 0 : Public, Static, Literal, HasDefault
+    VoxelEngine.UI.ArrowDirection Right = 1 : Public, Static, Literal, HasDefault
+    VoxelEngine.UI.ArrowDirection Up = 2 : Public, Static, Literal, HasDefault
+    VoxelEngine.UI.ArrowDirection Down = 3 : Public, Static, Literal, HasDefault
